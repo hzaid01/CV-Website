@@ -1,0 +1,171 @@
+/* Base styles moved from inline <style> */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #0f172a 0%, #000000 100%);
+    color: white;
+    overflow-x: hidden;
+}
+.typewriter {
+    font-family: 'Courier New', monospace;
+    overflow: hidden;
+    border-right: 2px solid #00ffff;
+    white-space: nowrap;
+    margin: 0 auto;
+}
+.glow-text {
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #0080ff;
+}
+.neon-border {
+    box-shadow: 0 0 10px #00ffff, 0 0 20px #0080ff, 0 0 30px #6a00ff;
+}
+.hero-enhanced {
+    background: linear-gradient(90deg, rgba(2,6,23,0.65), rgba(2,6,23,0.25)), url('zaid.JPG');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Card refinements */
+.card {
+    background: rgba(255,255,255,0.035);
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+    transition: transform 250ms ease, box-shadow 250ms ease;
+}
+.card:hover { transform: translateY(-6px) scale(1.01); box-shadow: 0 14px 30px rgba(2,6,23,0.6); }
+
+/* Buttons */
+.btn-primary { background: linear-gradient(90deg,#2563eb,#06b6d4); color: white; padding: 0.6rem 1rem; border-radius: 8px; box-shadow: 0 6px 18px rgba(3,105,161,0.25); }
+.btn-primary:hover { transform: translateY(-2px); }
+
+/* Skill bars: animated fill with subtle glow */
+.skill-row { margin-bottom: 1rem; }
+.skill-label { display:flex; justify-content:space-between; font-weight:600; color:#cbd5e1; }
+.skill-bar { background: rgba(255,255,255,0.06); border-radius:9999px; height:10px; overflow:hidden; }
+.skill-fill { height:100%; background: linear-gradient(90deg,#06b6d4,#3b82f6); box-shadow: 0 6px 18px rgba(59,130,246,0.18); width:0%; transition: width 1s ease-in-out; }
+.skill-fill.glow { box-shadow: 0 0 18px rgba(6,182,212,0.5); }
+
+/* when .animate-skills is added to a container, animate children fills to their data-width */
+.animate-skills .skill-fill { width: var(--w, 80%); }
+
+.skill-card { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+.skill-card.expanded { transform: scale(1.03); z-index:40; }
+.scroll-hint {
+    animation: bounce 2s infinite;
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+/* Skill description used during the typing effect - allow wrapping */
+.skill-desc {
+    white-space: normal; /* allow text to wrap to multiple lines */
+    border-right: none; /* remove the typewriter caret for descriptions */
+    text-align: center;
+    padding: 0.5rem;
+}
+
+
+/* Small responsive tweaks */
+@media (max-width: 640px) {
+    .flip-card { width: 200px; height: 200px; }
+}
+
+/* 3D scene and card styles */
+.scene {
+    perspective: 1400px; /* view distance for 3D effect */
+    -webkit-perspective: 1400px;
+}
+
+/* Removed card-3d and card-inner styles (no JS tilt) */
+
+/* gentle floating to give life */
+/* Floating animation removed to keep CSS lightweight */
+
+/* glassy panels */
+.glass {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.05);
+    backdrop-filter: blur(6px);
+}
+
+/* subtle perspective shadow when active */
+.card-shadow { box-shadow: 0 20px 40px rgba(2,6,23,0.6), 0 6px 12px rgba(0,0,0,0.6); }
+
+/* ensure skill descriptions wrap nicely on narrow cards */
+.skill-card .skill-desc { font-size: 0.95rem; line-height: 1.2; }
+
+/* Additional flip-card rules provided by user */
+.neon-border { box-shadow: 0 0 15px rgba(0, 255, 255, 0.65); }
+
+/* Reveal animation for sections */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity 600ms ease, transform 600ms ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* Fade / up animation for small elements */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Hero subtitle typewriter caret (faux) */
+.typewriter-caret { border-right: 2px solid rgba(255,255,255,0.85); padding-right: 6px; }
+
+/* Portfolio overlay smoother transition */
+.portfolio-overlay { transition: opacity 300ms ease, transform 300ms ease; opacity: 0; transform: translateY(6px); }
+.portfolio-item:hover .portfolio-overlay { opacity: 1; transform: translateY(0); }
+
+/* Back-to-top visibility */
+.back-to-top-hidden { opacity: 0; pointer-events: none; transform: scale(0.9); transition: opacity 240ms ease, transform 240ms ease; }
+.back-to-top-visible { opacity: 1; pointer-events: auto; transform: scale(1); transition: opacity 240ms ease, transform 240ms ease; }
+
+/* Subtle social icon hover */
+.social-ic { transition: transform 180ms ease, box-shadow 180ms ease; }
+.social-ic:hover { transform: translateY(-4px) scale(1.04); box-shadow: 0 8px 20px rgba(2,6,23,0.45); }
+
+/* Button micro-interaction */
+.btn-primary { transition: transform 160ms ease, box-shadow 160ms ease; }
+.btn-primary:active { transform: translateY(1px) scale(0.995); }
+
+/* Ensure form fields show black text (don't inherit white from body) */
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form textarea,
+input[type="text"],
+input[type="email"],
+textarea {
+    color: #000; /* user-typed text color */
+    background-color: #fff; /* ensure readable background */
+}
+
+/* Placeholder styling */
+#contact-form input::placeholder,
+#contact-form textarea::placeholder,
+input::placeholder,
+textarea::placeholder {
+    color: #6b7280; /* gray-500 */
+    opacity: 1;
+}
+
+/* Make sure focus ring remains visible and text stays black */
+#contact-form input:focus,
+#contact-form textarea:focus,
+input:focus,
+textarea:focus {
+    color: #000;
+    background-color: #fff;
+}
+
+/* Ensure text inside white panels is dark for readability */
+.bg-white {
+    color: #0f172a; /* dark slate */
+}
+.bg-white p,
+.bg-white h1,
+.bg-white h2,
+.bg-white h3,
+.bg-white h4,
+.bg-white span,
+.bg-white a {
+    color: #0f172a;
+}
+
