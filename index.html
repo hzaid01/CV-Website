@@ -32,7 +32,7 @@
     <!-- Navigation -->
     <nav class="fixed w-full bg-white shadow-md z-50">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <a href="#home" class="text-2xl font-bold text-gray-800">DevFolio</a>
+            <a href="#home" class="text-2xl font-bold text-gray-800">Zaid Sohail</a>
             <div class="hidden md:flex space-x-8">
                 <a href="#home" class="text-gray-800 hover:text-blue-600">HOME</a>
                 <a href="#about" class="text-gray-800 hover:text-blue-600">ABOUT</a>
@@ -353,13 +353,28 @@
             });
         })();
 
-        // Navbar: add subtle background when scrolling
+        // Navbar: add subtle background when scrolling and swap brand text
         (function navOnScroll() {
             const nav = document.querySelector('nav');
             if (!nav) return;
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 20) nav.classList.add('neon-border'); else nav.classList.remove('neon-border');
-            });
+            const brandLink = nav.querySelector('a') || null;
+            const originalText = brandLink ? brandLink.textContent.trim() : '';
+            const scrolledText = 'Zaid Sohail';
+
+            const onScroll = () => {
+                if (window.scrollY > 20) {
+                    nav.classList.add('neon-border');
+                    if (brandLink) brandLink.textContent = scrolledText;
+                } else {
+                    nav.classList.remove('neon-border');
+                    if (brandLink) brandLink.textContent = originalText;
+                }
+            };
+
+            // Also change when resizing or on load
+            window.addEventListener('scroll', onScroll);
+            window.addEventListener('load', onScroll);
+            window.addEventListener('resize', onScroll);
         })();
 
         // Skill bars: animate sequentially when About becomes visible
