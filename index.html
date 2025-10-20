@@ -26,19 +26,21 @@
             transition: all 0.3s ease;
         }
     </style>
+    <!-- GSAP + ScrollTrigger -->
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js" defer></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js" defer></script>
     
 </head>
 <body class="font-sans">
     <!-- Navigation -->
     <nav class="fixed w-full bg-white shadow-md z-50">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <a href="#home" class="text-2xl font-bold text-gray-800">Zaid Sohail</a>
+            <a href="#home" class="text-2xl font-bold text-gray-800 shiny-text">Zaid Sohail</a>
             <div class="hidden md:flex space-x-8">
                 <a href="#home" class="text-gray-800 hover:text-blue-600">HOME</a>
                 <a href="#about" class="text-gray-800 hover:text-blue-600">ABOUT</a>
                 <a href="#services" class="text-gray-800 hover:text-blue-600">SERVICES</a>
                 <a href="#work" class="text-gray-800 hover:text-blue-600">WORK</a>
-                <a href="#blog" class="text-gray-800 hover:text-blue-600">BLOG</a>
                 <a href="#contact" class="text-gray-800 hover:text-blue-600">CONTACT</a>
             </div>
             <button class="md:hidden">
@@ -50,7 +52,7 @@
     <!-- Hero Section -->
     <section id="home" class="bg-image min-h-screen flex items-center justify-center text-white pt-20">
         <div class="container mx-auto px-6 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4">I'm Zaid Sohail</h1>
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 shiny-text scroll-float">I'm Zaid Sohail</h1>
             <p class="text-xl md:text-2xl mb-8">Developer | Designer | Student</p>
             <div class="animate-bounce">
                 <a href="#about" class="inline-block">
@@ -65,7 +67,13 @@
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-10 md:mb-0">
-                    <div class="bg-white p-8 shadow-lg rounded-lg">
+                    <div id="about-card" class="pc-card-wrapper">
+                        <section class="pc-card">
+                            <div class="pc-inside">
+                                <div class="pc-shine"></div>
+                                <div class="pc-glare"></div>
+                                <div class="pc-content">
+                                    <div class="bg-white p-8 shadow-lg rounded-lg">
                         <div class="flex items-center mb-4">
                             <img src="zaid.JPG" alt="Profile" class="w-32 h-32 rounded-full object-cover">
                             <div class="ml-6">
@@ -107,10 +115,14 @@
                                 </div>
                             </div>
                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
                     </div>
                 </div>
                 <div class="md:w-1/2 md:pl-12">
-                    <h2 class="text-3xl font-bold mb-6">About me</h2>
+                    <h2 class="text-3xl font-bold mb-6 shiny-text scroll-float">About me</h2>
                     <p class="text-gray-600 mb-4">
                         I'm Zaid Sohail, a Computer Science student passionate about software development, problem solving, and learning new technologies. I enjoy building efficient algorithms, clean user interfaces, and automations that make life easier. My current focus is strengthening my skills in C++, data structures & algorithms, and web development.
                     </p>
@@ -125,7 +137,7 @@
     <section id="services" class="py-20 bg-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold mb-4">SERVICES</h2>
+                <h2 class="text-3xl font-bold mb-4 shiny-text scroll-float">SERVICES</h2>
                 <p class="text-gray-600 max-w-2xl mx-auto">I offer web design, development and automation services.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -158,9 +170,110 @@
     <section id="work" class="py-20 bg-gray-100">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold mb-4">PORTFOLIO</h2>
+                <h2 class="text-3xl font-bold mb-4 shiny-text scroll-float">PORTFOLIO</h2>
                 <p class="text-gray-600 max-w-2xl mx-auto">A selection of projects I've worked on.</p>
             </div>
+            <!-- Logo Loop Section -->
+            <div class="logo-loop-container mb-16">
+                <div class="logo-loop-wrapper">
+                    <div class="logo-loop-track">
+                        <div class="logo-item">
+                            <img src="C++.jpeg" alt="C++" class="logo-image">
+                            <span class="logo-text">C++</span>
+                        </div>
+                        <div class="logo-item">
+                            <img src="HTML.png" alt="HTML" class="logo-image">
+                            <span class="logo-text">HTML</span>
+                        </div>
+                        <div class="logo-item">
+                            <img src="CSS.png" alt="CSS" class="logo-image">
+                            <span class="logo-text">CSS</span>
+                        </div>
+                        <div class="logo-item">
+                            <img src="Python.png" alt="Python" class="logo-image">
+                            <span class="logo-text">Python</span>
+                        </div>
+                        <!-- Duplicate for seamless loop -->
+                        <div class="logo-item">
+                            <img src="C++.jpeg" alt="C++" class="logo-image">
+                            <span class="logo-text">C++</span>
+                        </div>
+                        <div class="logo-item">
+                            <img src="HTML.png" alt="HTML" class="logo-image">
+                            <span class="logo-text">HTML</span>
+                        </div>
+                        <div class="logo-item">
+                            <img src="CSS.png" alt="CSS" class="logo-image">
+                            <span class="logo-text">CSS</span>
+                        </div>
+                        <div class="logo-item">
+                            <img src="Python.png" alt="Python" class="logo-image">
+                            <span class="logo-text">Python</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chroma Grid Section -->
+            <div class="chroma-grid mt-10" style="--r: 260px; --cols: 3; --rows: 2;">
+                <!-- Card 1 -->
+                <article class="chroma-card" style="--card-border:#4F46E5; --card-gradient: linear-gradient(145deg,#4F46E5,#000);" data-url="https://react.dev">
+                    <div class="chroma-img-wrapper"><img src="HTML.png" alt="HTML" loading="lazy"></div>
+                    <footer class="chroma-info">
+                        <h3 class="name">HTML</h3>
+                        <span class="handle">@markup</span>
+                        <p class="role">Structure & Semantics</p>
+                    </footer>
+                </article>
+                <!-- Card 2 -->
+                <article class="chroma-card" style="--card-border:#10B981; --card-gradient: linear-gradient(210deg,#10B981,#000);" data-url="https://tailwindcss.com">
+                    <div class="chroma-img-wrapper"><img src="CSS.png" alt="CSS" loading="lazy"></div>
+                    <footer class="chroma-info">
+                        <h3 class="name">CSS</h3>
+                        <span class="handle">@styles</span>
+                        <p class="role">Design & Layout</p>
+                    </footer>
+                </article>
+                <!-- Card 3 -->
+                <article class="chroma-card" style="--card-border:#06B6D4; --card-gradient: linear-gradient(135deg,#06B6D4,#000);" data-url="https://www.python.org">
+                    <div class="chroma-img-wrapper"><img src="Python.png" alt="Python" loading="lazy"></div>
+                    <footer class="chroma-info">
+                        <h3 class="name">Python</h3>
+                        <span class="handle">@scripts</span>
+                        <p class="role">Automation & Back-end</p>
+                    </footer>
+                </article>
+                <!-- Card 4 -->
+                <article class="chroma-card" style="--card-border:#F59E0B; --card-gradient: linear-gradient(165deg,#F59E0B,#000);" data-url="#">
+                    <div class="chroma-img-wrapper"><img src="C++.jpeg" alt="C++" loading="lazy"></div>
+                    <footer class="chroma-info">
+                        <h3 class="name">C++</h3>
+                        <span class="handle">@dsa</span>
+                        <p class="role">Performance & DSA</p>
+                    </footer>
+                </article>
+                <!-- Card 5 (duplicate styles to fill grid) -->
+                <article class="chroma-card" style="--card-border:#8B5CF6; --card-gradient: linear-gradient(225deg,#8B5CF6,#000);" data-url="#">
+                    <div class="chroma-img-wrapper"><img src="zaid.JPG" alt="Profile" loading="lazy"></div>
+                    <footer class="chroma-info">
+                        <h3 class="name">Portrait</h3>
+                        <span class="handle">@zaid</span>
+                        <p class="role">Personal</p>
+                    </footer>
+                </article>
+                <!-- Card 6 -->
+                <article class="chroma-card" style="--card-border:#EF4444; --card-gradient: linear-gradient(195deg,#EF4444,#000);" data-url="#">
+                    <div class="chroma-img-wrapper"><img src="C++.avif" alt="C++ Alt" loading="lazy"></div>
+                    <footer class="chroma-info">
+                        <h3 class="name">C++ (AVIF)</h3>
+                        <span class="handle">@alt</span>
+                        <p class="role">Formats</p>
+                    </footer>
+                </article>
+                <div class="chroma-overlay"></div>
+                <div class="chroma-fade"></div>
+            </div>
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="portfolio-item relative rounded-lg overflow-hidden">
                     <img src="C++.jpeg" alt="Portfolio" class="w-full h-64 object-cover">
@@ -187,48 +300,14 @@
         </div>
     </section>
 
-    <!-- Blog Section -->
-    <section id="blog" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold mb-4">BLOG</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Thoughts and tutorials.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white rounded-lg overflow-hidden shadow-md">
-                    <img src="Python.png" alt="Blog" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <span class="inline-block px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm mb-2">TUTORIAL</span>
-                        <h3 class="text-xl font-bold mb-2">Getting started with Python</h3>
-                        <p class="text-gray-600 mb-4">A quick primer to Python for beginners.</p>
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg overflow-hidden shadow-md">
-                    <img src="C++.avif" alt="Blog" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <span class="inline-block px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm mb-2">ARTICLE</span>
-                        <h3 class="text-xl font-bold mb-2">DSA Tips</h3>
-                        <p class="text-gray-600 mb-4">Improve your problem solving skills.</p>
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg overflow-hidden shadow-md">
-                    <img src="zaid.JPG" alt="Blog" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <span class="inline-block px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm mb-2">INSIGHT</span>
-                        <h3 class="text-xl font-bold mb-2">Building portfolios</h3>
-                        <p class="text-gray-600 mb-4">How to showcase projects effectively.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    
 
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-gray-100">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row">
                 <div class="md:w-1/2 mb-10 md:mb-0 md:pr-6">
-                    <h2 class="text-3xl font-bold mb-6">Send Us a Message</h2>
+                    <h2 class="text-3xl font-bold mb-6 scroll-float">Send Us a Message</h2>
                     <!-- Contact form: mailto fallback + JS handler to open user's email client -->
                     <form id="contact-form" class="space-y-6" action="mailto:zaidsohail555@gmail.com" method="post" enctype="text/plain">
                         <div>
@@ -249,7 +328,7 @@
                     </form>
                 </div>
                 <div class="md:w-1/2 md:pl-6">
-                    <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
+                    <h2 class="text-3xl font-bold mb-6 scroll-float">Get in Touch</h2>
                     <p class="text-gray-600 mb-6">
                         If you'd like to collaborate, hire me, or have a question, please use the contact form or the details on the right — I’ll respond as soon as possible.
                     </p>
@@ -308,6 +387,126 @@
         <i data-feather="arrow-up"></i>
     </a>
 
+    <!-- ClickSpark Canvas -->
+    <canvas id="click-spark-canvas" style="position:fixed;inset:0;pointer-events:none;z-index:60;display:block;width:100vw;height:100vh"></canvas>
+
+    <script>
+        // GSAP ScrollFloat effect for headings
+        (function () {
+            if (!(window.gsap && window.ScrollTrigger)) return;
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Split text into span.char nodes
+            function splitIntoChars(element) {
+                if (!element || element.dataset.split === '1') return;
+                const text = element.textContent;
+                const frag = document.createDocumentFragment();
+                for (let i = 0; i < text.length; i++) {
+                    const ch = text[i] === ' ' ? '\u00A0' : text[i];
+                    const span = document.createElement('span');
+                    span.className = 'char';
+                    span.textContent = ch;
+                    frag.appendChild(span);
+                }
+                element.textContent = '';
+                element.appendChild(frag);
+                element.dataset.split = '1';
+            }
+
+            const targets = Array.from(document.querySelectorAll('.scroll-float'));
+            targets.forEach((el) => {
+                splitIntoChars(el);
+                const chars = el.querySelectorAll('.char');
+                gsap.fromTo(
+                    chars,
+                    {
+                        willChange: 'opacity, transform',
+                        opacity: 0,
+                        yPercent: 120,
+                        scaleY: 2.3,
+                        scaleX: 0.7,
+                        transformOrigin: '50% 0%'
+                    },
+                    {
+                        duration: 1,
+                        ease: 'back.inOut(2)',
+                        opacity: 1,
+                        yPercent: 0,
+                        scaleY: 1,
+                        scaleX: 1,
+                        stagger: 0.03,
+                        scrollTrigger: {
+                            trigger: el,
+                            start: 'center bottom+=50%',
+                            end: 'bottom bottom-=40%',
+                            scrub: true
+                        }
+                    }
+                );
+            });
+        })();
+    </script>
+    <script>
+        // Vanilla tilt for the About profile card
+        (function tiltProfileCard() {
+            const wrap = document.getElementById('about-card');
+            if (!wrap) return;
+            const card = wrap.querySelector('.pc-card');
+            if (!card) return;
+
+            let rafId = null;
+            const clamp = (v, min = 0, max = 100) => Math.min(Math.max(v, min), max);
+            const adjust = (value, a, b, c, d) => c + ((d - c) * (value - a)) / (b - a);
+
+            function update(offsetX, offsetY) {
+                const rect = card.getBoundingClientRect();
+                const w = rect.width, h = rect.height;
+                const percentX = clamp((100 / w) * offsetX);
+                const percentY = clamp((100 / h) * offsetY);
+                const centerX = percentX - 50;
+                const centerY = percentY - 50;
+
+                wrap.style.setProperty('--pointer-x', percentX + '%');
+                wrap.style.setProperty('--pointer-y', percentY + '%');
+                wrap.style.setProperty('--background-x', adjust(percentX, 0, 100, 35, 65) + '%');
+                wrap.style.setProperty('--background-y', adjust(percentY, 0, 100, 35, 65) + '%');
+                wrap.style.setProperty('--pointer-from-center', Math.min(Math.hypot(centerX, centerY) / 50, 1));
+                card.style.transform = `rotateX(${(centerY/4).toFixed(2)}deg) rotateY(${(-centerX/5).toFixed(2)}deg)`;
+            }
+
+            function onEnter() { card.classList.add('active'); }
+            function onLeave(e) {
+                card.classList.remove('active');
+                const startX = e.offsetX, startY = e.offsetY;
+                const start = performance.now();
+                const dur = 500;
+                const cx = card.clientWidth/2, cy = card.clientHeight/2;
+                const ease = t => (t<0.5 ? 4*t*t*t : 1 - Math.pow(-2*t+2,3)/2);
+                const loop = (now) => {
+                    const p = Math.min((now-start)/dur, 1);
+                    const ep = ease(p);
+                    update(startX + (cx-startX)*ep, startY + (cy-startY)*ep);
+                    if (p < 1) rafId = requestAnimationFrame(loop);
+                };
+                rafId && cancelAnimationFrame(rafId);
+                rafId = requestAnimationFrame(loop);
+            }
+            function onMove(e) {
+                const rect = card.getBoundingClientRect();
+                update(e.clientX - rect.left, e.clientY - rect.top);
+            }
+
+            card.addEventListener('pointerenter', onEnter);
+            card.addEventListener('pointerleave', onLeave);
+            card.addEventListener('pointermove', onMove);
+
+            // initialize slight offset and ease to center
+            const initX = card.clientWidth - 70;
+            const initY = 60;
+            update(initX, initY);
+            onLeave({ offsetX: initX, offsetY: initY });
+        })();
+    </script>
     <script>
         // Enhanced UI: feather icons, smooth scrolling, reveal-on-scroll, typewriter, navbar behavior, skill animation
         if (typeof feather !== 'undefined') feather.replace();
@@ -443,6 +642,167 @@
 
                 try { window.location.href = mailto; } catch (err) { alert('Could not open mail client. Please send an email to ' + to + ' with your message.'); }
             });
+        })();
+
+        // Logo Loop functionality
+        (function logoLoop() {
+            const container = document.querySelector('.logo-loop-container');
+            if (!container) return;
+            
+            const track = container.querySelector('.logo-loop-track');
+            const items = container.querySelectorAll('.logo-item');
+            
+            // Add click handlers for each logo
+            items.forEach(item => {
+                item.addEventListener('click', function() {
+                    const text = this.querySelector('.logo-text').textContent;
+                    console.log(`Clicked on ${text} logo`);
+                    // You can add more functionality here, like opening links
+                });
+            });
+            
+            // Optional: Add intersection observer to pause animation when not visible
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        track.style.animationPlayState = 'running';
+                    } else {
+                        track.style.animationPlayState = 'paused';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            observer.observe(container);
+        })();
+
+        // ClickSpark - global click spark effect
+        (function clickSpark() {
+            const canvas = document.getElementById('click-spark-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+
+            let sparks = [];
+            let animationId = null;
+            let resizeTimeout;
+
+            function resize() {
+                const dpr = window.devicePixelRatio || 1;
+                const { innerWidth: w, innerHeight: h } = window;
+                const cssW = w, cssH = h;
+                if (canvas.width !== Math.floor(cssW * dpr) || canvas.height !== Math.floor(cssH * dpr)) {
+                    canvas.width = Math.floor(cssW * dpr);
+                    canvas.height = Math.floor(cssH * dpr);
+                    canvas.style.width = cssW + 'px';
+                    canvas.style.height = cssH + 'px';
+                    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+                }
+            }
+
+            const RO = new ResizeObserver(() => {
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(resize, 80);
+            });
+            RO.observe(document.body);
+            resize();
+
+            const config = {
+                sparkColor: '#60a5fa',
+                sparkSize: 12,
+                sparkRadius: 18,
+                sparkCount: 10,
+                duration: 420,
+                extraScale: 1.0
+            };
+
+            function easeOut(t){ return t * (2 - t); }
+
+            function draw(ts) {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                const now = performance.now();
+
+                sparks = sparks.filter(s => {
+                    const elapsed = now - s.start;
+                    if (elapsed >= config.duration) return false;
+                    const p = elapsed / config.duration;
+                    const e = easeOut(p);
+                    const dist = e * config.sparkRadius * config.extraScale;
+                    const len = config.sparkSize * (1 - e);
+                    const x1 = s.x + dist * Math.cos(s.a);
+                    const y1 = s.y + dist * Math.sin(s.a);
+                    const x2 = s.x + (dist + len) * Math.cos(s.a);
+                    const y2 = s.y + (dist + len) * Math.sin(s.a);
+                    ctx.strokeStyle = config.sparkColor;
+                    ctx.lineWidth = 2;
+                    ctx.beginPath();
+                    ctx.moveTo(x1, y1);
+                    ctx.lineTo(x2, y2);
+                    ctx.stroke();
+                    return true;
+                });
+
+                animationId = requestAnimationFrame(draw);
+            }
+
+            function spawn(e){
+                const rect = canvas.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const now = performance.now();
+                for (let i = 0; i < config.sparkCount; i++) {
+                    sparks.push({ x, y, a: (2*Math.PI*i)/config.sparkCount, start: now });
+                }
+            }
+
+            window.addEventListener('click', spawn, { passive: true });
+            animationId = requestAnimationFrame(draw);
+
+            // cleanup on page hide/unload
+            window.addEventListener('beforeunload', () => {
+                cancelAnimationFrame(animationId);
+                window.removeEventListener('click', spawn);
+                RO.disconnect();
+            });
+        })();
+
+        // Chroma Grid mouse tracking and links
+        (function chromaGrid() {
+            const grid = document.querySelector('.chroma-grid');
+            if (!grid) return;
+            const cards = Array.from(grid.querySelectorAll('.chroma-card'));
+
+            function onMoveCard(e){
+                const rect = this.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                this.style.setProperty('--mouse-x', x + 'px');
+                this.style.setProperty('--mouse-y', y + 'px');
+            }
+
+            function onClickCard(){
+                const url = this.getAttribute('data-url');
+                if (url && url !== '#') window.open(url, '_blank', 'noopener,noreferrer');
+            }
+
+            cards.forEach(card => {
+                card.addEventListener('mousemove', onMoveCard);
+                card.addEventListener('click', onClickCard);
+            });
+
+            // Grid-level spotlight follows pointer
+            const setX = (v)=> grid.style.setProperty('--x', v + 'px');
+            const setY = (v)=> grid.style.setProperty('--y', v + 'px');
+            const rect = () => grid.getBoundingClientRect();
+            function onMove(e){
+                const r = rect();
+                setX(e.clientX - r.left);
+                setY(e.clientY - r.top);
+                grid.querySelector('.chroma-fade').style.opacity = '0';
+            }
+            function onLeave(){
+                grid.querySelector('.chroma-fade').style.opacity = '1';
+            }
+            grid.addEventListener('pointermove', onMove);
+            grid.addEventListener('pointerleave', onLeave);
         })();
     </script>
 </body>
