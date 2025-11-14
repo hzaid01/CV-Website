@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     requestAnimationFrame(raf)
 
-    const mobileMenuButton = document.querySelector('nav button');
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
 
     mobileMenuButton.addEventListener('click', () => {
