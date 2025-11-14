@@ -413,3 +413,22 @@ textarea:focus {
 
 /* Portfolio images fluid height */
 .portfolio-item img { height: clamp(180px, 32vw, 256px); }
+
+@media (max-width: 767px) {
+    #mobile-menu {
+        display: block;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: white;
+        padding: 1rem;
+        border-top: 1px solid #e5e7eb;
+    }
+
+    #mobile-menu a {
+        display: block;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #e5e7eb;
+    }
+}

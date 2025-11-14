@@ -11,6 +11,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     requestAnimationFrame(raf)
+
+    const mobileMenuButton = document.querySelector('nav button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
     if (typeof feather !== 'undefined') feather.replace();
     
     // Loading scene

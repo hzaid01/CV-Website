@@ -37,7 +37,7 @@
     <nav class="fixed w-full bg-white shadow-md z-50">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
             <a href="#home" class="text-2xl font-bold text-gray-800 shiny-text">Zaid Sohail</a>
-            <div class="hidden md:flex space-x-8">
+            <div id="mobile-menu" class="hidden md:flex space-x-8">
                 <a href="#home" class="text-gray-800 hover:text-blue-600">HOME</a>
                 <a href="#about" class="text-gray-800 hover:text-blue-600">ABOUT</a>
                 <a href="#services" class="text-gray-800 hover:text-blue-600">SERVICES</a>
@@ -215,90 +215,6 @@
                 </div>
             </div>
 
-            <!-- Chroma Grid Section -->
-            <div class="chroma-grid mt-10" style="--r: 260px; --cols: 3; --rows: 2;">
-                <!-- Card 1 -->
-                <article class="chroma-card" style="--card-border:#4F46E5; --card-gradient: linear-gradient(145deg,#4F46E5,#000);" data-url="https://react.dev">
-                    <div class="chroma-img-wrapper"><img src="HTML.png" alt="HTML" loading="lazy"></div>
-                    <footer class="chroma-info">
-                        <h3 class="name">HTML</h3>
-                        <span class="handle">@markup</span>
-                        <p class="role">Structure & Semantics</p>
-                    </footer>
-                </article>
-                <!-- Card 2 -->
-                <article class="chroma-card" style="--card-border:#10B981; --card-gradient: linear-gradient(210deg,#10B981,#000);" data-url="https://tailwindcss.com">
-                    <div class="chroma-img-wrapper"><img src="CSS.png" alt="CSS" loading="lazy"></div>
-                    <footer class="chroma-info">
-                        <h3 class="name">CSS</h3>
-                        <span class="handle">@styles</span>
-                        <p class="role">Design & Layout</p>
-                    </footer>
-                </article>
-                <!-- Card 3 -->
-                <article class="chroma-card" style="--card-border:#06B6D4; --card-gradient: linear-gradient(135deg,#06B6D4,#000);" data-url="https://www.python.org">
-                    <div class="chroma-img-wrapper"><img src="Python.png" alt="Python" loading="lazy"></div>
-                    <footer class="chroma-info">
-                        <h3 class="name">Python</h3>
-                        <span class="handle">@scripts</span>
-                        <p class="role">Automation & Back-end</p>
-                    </footer>
-                </article>
-                <!-- Card 4 -->
-                <article class="chroma-card" style="--card-border:#F59E0B; --card-gradient: linear-gradient(165deg,#F59E0B,#000);" data-url="#">
-                    <div class="chroma-img-wrapper"><img src="C++.jpeg" alt="C++" loading="lazy"></div>
-                    <footer class="chroma-info">
-                        <h3 class="name">C++</h3>
-                        <span class="handle">@dsa</span>
-                        <p class="role">Performance & DSA</p>
-                    </footer>
-                </article>
-                <!-- Card 5 (duplicate styles to fill grid) -->
-                <article class="chroma-card" style="--card-border:#8B5CF6; --card-gradient: linear-gradient(225deg,#8B5CF6,#000);" data-url="#">
-                    <div class="chroma-img-wrapper"><img src="zaid.JPG" alt="Profile" loading="lazy"></div>
-                    <footer class="chroma-info">
-                        <h3 class="name">Portrait</h3>
-                        <span class="handle">@zaid</span>
-                        <p class="role">Personal</p>
-                    </footer>
-                </article>
-                <!-- Card 6 -->
-                <article class="chroma-card" style="--card-border:#EF4444; --card-gradient: linear-gradient(195deg,#EF4444,#000);" data-url="#">
-                    <div class="chroma-img-wrapper"><img src="C++.avif" alt="C++ Alt" loading="lazy"></div>
-                    <footer class="chroma-info">
-                        <h3 class="name">C++ (AVIF)</h3>
-                        <span class="handle">@alt</span>
-                        <p class="role">Formats</p>
-                    </footer>
-                </article>
-                <div class="chroma-overlay"></div>
-                <div class="chroma-fade"></div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="portfolio-item relative rounded-lg overflow-hidden">
-                    <img src="C++.jpeg" alt="Portfolio" class="w-full h-64 object-cover">
-                    <div class="portfolio-overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col items-center justify-center p-4 text-center text-white">
-                        <h3 class="text-xl font-bold mb-2">C++ Project</h3>
-                        <p class="mb-4">Algorithms & Data Structures</p>
-                    </div>
-                </div>
-                <div class="portfolio-item relative rounded-lg overflow-hidden">
-                    <img src="HTML.png" alt="Portfolio" class="w-full h-64 object-cover">
-                    <div class="portfolio-overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col items-center justify-center p-4 text-center text-white">
-                        <h3 class="text-xl font-bold mb-2">Website</h3>
-                        <p class="mb-4">Responsive web design</p>
-                    </div>
-                </div>
-                <div class="portfolio-item relative rounded-lg overflow-hidden">
-                    <img src="CSS.png" alt="Portfolio" class="w-full h-64 object-cover">
-                    <div class="portfolio-overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col items-center justify-center p-4 text-center text-white">
-                        <h3 class="text-xl font-bold mb-2">Styling Work</h3>
-                        <p class="mb-4">Advanced CSS techniques</p>
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
 
     
