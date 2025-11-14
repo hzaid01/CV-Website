@@ -430,4 +430,9 @@ textarea:focus {
         padding: 0.5rem 0;
         border-bottom: 1px solid #e5e7eb;
     }
+
+    .pc-card-wrapper {
+        width: 100%;
+        margin: 0 auto;
+    }
 }
