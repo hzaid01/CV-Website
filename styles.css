@@ -416,7 +416,6 @@ textarea:focus {
 
 @media (max-width: 767px) {
     #mobile-menu {
-        display: block;
         position: absolute;
         top: 60px;
         left: 0;
