@@ -435,4 +435,12 @@ textarea:focus {
         width: 100%;
         margin: 0 auto;
     }
+
+    .pc-card .flex.items-center {
+        flex-direction: column;
+    }
+
+    .pc-card .flex.items-center img {
+        margin-bottom: 1rem;
+    }
 }
