@@ -19,6 +19,22 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileMenu.classList.toggle('hidden');
     });
 
+    // Smooth scrolling and active link highlighting
+    const navLinks = document.querySelectorAll('nav a');
+    const sections = document.querySelectorAll('section');
+
+    function changeLinkState() {
+        let index = sections.length;
+
+        while(--index && window.scrollY + 50 < sections[index].offsetTop) {}
+        
+        navLinks.forEach((link) => link.classList.remove('active'));
+        navLinks[index].classList.add('active');
+    }
+
+    changeLinkState();
+    window.addEventListener('scroll', changeLinkState);
+
     if (typeof feather !== 'undefined') feather.replace();
     
     // Loading scene
@@ -211,39 +227,37 @@ document.addEventListener('DOMContentLoaded', function() {
     // still block, we could attach the same handler to the inner element too.
 
 
-    // Hire me section
-    const yesBtn = document.getElementById('yes-btn');
-    const noBtn = document.getElementById('no-btn');
+    // Contact form
     const contactForm = document.getElementById('contact-form');
-    const closeForm = document.getElementById('close-form');
-    const hireForm = document.getElementById('hire-form');
 
-    yesBtn.addEventListener('click', function() {
-        contactForm.classList.remove('hidden');
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+            .then(() => {
+                alert('Message sent successfully!');
+                contactForm.reset();
+            }, (error) => {
+                alert('Failed to send message. Please try again later.');
+                console.log('FAILED...', error);
+            });
     });
 
-    noBtn.addEventListener('click', function() {
-        if (typeof anime !== 'undefined') {
-            anime({
-                targets: noBtn,
-                translateX: [0, 100, -100, 100, -100, 0],
-                duration: 1000,
-                easing: 'easeInOutQuart'
-            });
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+
+    darkModeToggle.addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark');
+        if (document.documentElement.classList.contains('dark')) {
+            localStorage.setItem('theme', 'dark');
+        } else {
+            localStorage.setItem('theme', 'light');
         }
     });
 
-    closeForm.addEventListener('click', function() {
-        contactForm.classList.add('hidden');
-    });
-
-    hireForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        // Integration point: EmailJS / Formspree / backend
-        alert('Thank you! Your message has been sent to Zaid Sohail.');
-        contactForm.classList.add('hidden');
-        this.reset();
-    });
+    // Check for saved theme preference
+    if (localStorage.getItem('theme') === 'dark') {
+        document.documentElement.classList.add('dark');
+    }
 
     // Vanta.js background
     function initVantaBackground() {
@@ -263,4 +277,19 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     }
+
+
+    // Download CV as PDF
+    const downloadPdfButton = document.getElementById('download-pdf');
+    downloadPdfButton.addEventListener('click', () => {
+        const element = document.body;
+        const opt = {
+            margin:       0,
+            filename:     'Zaid_Sohail_CV.pdf',
+            image:        { type: 'jpeg', quality: 0.98 },
+            html2canvas:  { scale: 2 },
+            jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+        };
+        html2pdf().set(opt).from(element).save();
+    });
 });

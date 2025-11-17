@@ -4,29 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zaid Sohail CV</title>
+    <meta name="description" content="The personal portfolio of Zaid Sohail, a passionate developer creating modern and responsive web applications.">
+    <meta property="og:title" content="Zaid Sohail - Developer Portfolio" />
+    <meta property="og:description" content="The personal portfolio of Zaid Sohail, a passionate developer creating modern and responsive web applications." />
+    <meta property="og:image" content="https://via.placeholder.com/1200x630" />
+    <meta property="og:url" content="https://zaidsohail.github.io/CV-website/" />
+    <meta name="twitter:card" content="summary_large_image">
+
     <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <link rel="stylesheet" href="styles.css">
     <script src="https://unpkg.com/lenis@1.1.4/dist/lenis.min.js"></script>
-    <style>
-        .bg-image {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('zaid.JPG');
-            background-size: cover;
-            background-position: center;
-        }
-        .service-card:hover {
-            transform: translateY(-10px);
-            transition: all 0.3s ease;
-        }
-        .portfolio-item:hover .portfolio-overlay {
-            opacity: 1;
-        }
-        .portfolio-overlay {
-            opacity: 0;
-            transition: all 0.3s ease;
-        }
-    </style>
     <!-- GSAP + ScrollTrigger -->
     <script src="https://unpkg.com/gsap@3/dist/gsap.min.js" defer></script>
     <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js" defer></script>
@@ -44,11 +37,36 @@
                 <a href="#work" class="text-gray-800 hover:text-blue-600">WORK</a>
                 <a href="#contact" class="text-gray-800 hover:text-blue-600">CONTACT</a>
             </div>
-            <button id="mobile-menu-button" class="md:hidden" style="z-index: 50;">
-                <i data-feather="menu"></i>
-            </button>
+            <div class="flex items-center">
+                <button id="dark-mode-toggle" class="ml-8">
+                    <i data-feather="moon"></i>
+                </button>
+                <button id="mobile-menu-button" class="md:hidden ml-4" style="z-index: 50;">
+                    <i data-feather="menu"></i>
+                </button>
+            </div>
         </div>
     </nav>
+
+    <!-- New Hero Section -->
+    <section id="new-home" class="py-20 lg:py-40">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <span class="text-blue-500 font-semibold">Hey, I'm Zaid Sohail</span>
+                    <h1 class="text-4xl md:text-6xl font-bold mt-2 mb-4">I Build & Design Web Experiences.</h1>
+                    <p class="text-lg text-gray-600 mb-8">I'm a passionate developer, creating modern and responsive web applications. I specialize in turning ideas into beautiful, functional products.</p>
+                    <div class="flex space-x-4">
+                        <a href="#work" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300">My Work</a>
+                        <a href="#" id="download-pdf" class="px-6 py-3 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition duration-300">Download as PDF</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://via.placeholder.com/500" alt="Illustration of a developer working" class="rounded-lg shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Hero Section -->
     <section id="home" class="bg-image min-h-screen flex items-center justify-center text-white pt-20">
@@ -64,71 +82,31 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-gray-100">
+    <section id="about" class="py-20 bg-white">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-10 md:mb-0">
-                    <div id="about-card" class="pc-card-wrapper">
-                        <section class="pc-card">
-                            <div class="pc-inside">
-                                <div class="pc-shine"></div>
-                                <div class="pc-glare"></div>
-                                <div class="pc-content">
-                                    <div class="bg-white p-8 shadow-lg rounded-lg">
-                        <div class="flex items-center mb-4">
-                            <img src="zaid.JPG" alt="Profile" class="w-32 h-32 rounded-full object-cover">
-                            <div class="ml-6">
-                                <p class="font-bold">Name: <span class="font-normal">Zaid Sohail</span></p>
-                                <p class="font-bold">Profile: <span class="font-normal">CS Student</span></p>
-                                <p class="font-bold">Email: <span class="font-normal">zaidsohail555@gmail.com</span></p>
-                                <p class="font-bold">Phone: <span class="font-normal">+92 315 6338828</span></p>
-                            </div>
-                        </div>
-                        <div class="mt-6">
-                            <h3 class="font-bold mb-2">Skills</h3>
-                            <div class="space-y-4">
-                                <div>
-                                    <div class="flex justify-between mb-1">
-                                        <span>C++</span>
-                                        <span>85%</span>
-                                    </div>
-                                    <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                        <div class="bg-blue-600 h-2.5 rounded-full" style="width: 85%"></div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="flex justify-between mb-1">
-                                        <span>HTML & CSS</span>
-                                        <span>75%</span>
-                                    </div>
-                                    <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                        <div class="bg-blue-600 h-2.5 rounded-full" style="width: 75%"></div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="flex justify-between mb-1">
-                                        <span>Python</span>
-                                        <span>70%</span>
-                                    </div>
-                                    <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                        <div class="bg-blue-600 h-2.5 rounded-full" style="width: 70%"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
+                    <img src="zaid.JPG" alt="Profile" class="rounded-full w-80 h-80 object-cover mx-auto shadow-lg">
                 </div>
                 <div class="md:w-1/2 md:pl-12">
-                    <h2 class="text-3xl font-bold mb-6 shiny-text scroll-float">About me</h2>
+                    <h2 class="text-3xl font-bold mb-6">About Me</h2>
                     <p class="text-gray-600 mb-4">
-                        I'm Zaid Sohail, a Computer Science student passionate about software development, problem solving, and learning new technologies. I enjoy building efficient algorithms, clean user interfaces, and automations that make life easier. My current focus is strengthening my skills in C++, data structures & algorithms, and web development.
+                        I am a passionate and driven Computer Science student with a strong foundation in software development and problem-solving. I thrive on challenges and am constantly seeking opportunities to learn and grow in the ever-evolving world of technology.
                     </p>
-
-                    
+                    <p class="text-gray-600 mb-4">
+                        My journey in programming began with a fascination for how things work, which has since blossomed into a love for crafting elegant and efficient solutions. I am proficient in C++, Python, and web technologies, and I am always eager to expand my skillset.
+                    </p>
+                    <div class="mt-6">
+                        <h3 class="font-bold mb-2">My Skills</h3>
+                        <div class="flex flex-wrap">
+                            <span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 mb-2 px-2.5 py-0.5 rounded">C++</span>
+                            <span class="bg-green-100 text-green-800 text-sm font-medium mr-2 mb-2 px-2.5 py-0.5 rounded">Python</span>
+                            <span class="bg-yellow-100 text-yellow-800 text-sm font-medium mr-2 mb-2 px-2.5 py-0.5 rounded">HTML</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-sm font-medium mr-2 mb-2 px-2.5 py-0.5 rounded">CSS</span>
+                            <span class="bg-pink-100 text-pink-800 text-sm font-medium mr-2 mb-2 px-2.5 py-0.5 rounded">JavaScript</span>
+                            <span class="bg-purple-100 text-purple-800 text-sm font-medium mr-2 mb-2 px-2.5 py-0.5 rounded">Tailwind CSS</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -167,54 +145,246 @@
         </div>
     </section>
 
-    <!-- Portfolio Section -->
+    <!-- Projects Section -->
     <section id="work" class="py-20 bg-gray-100">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold mb-4 shiny-text scroll-float">PORTFOLIO</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">A selection of projects I've worked on.</p>
+                <h2 class="text-3xl font-bold mb-4">My Projects</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Here are some of the projects I've worked on.</p>
             </div>
-            <!-- Logo Loop Section -->
-            <div class="logo-loop-container mb-16">
-                <div class="logo-loop-wrapper">
-                    <div class="logo-loop-track">
-                        <div class="logo-item">
-                            <img src="C++.jpeg" alt="C++" class="logo-image">
-                            <span class="logo-text">C++</span>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Card 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://via.placeholder.com/400x250" alt="Project Screenshot" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Project Title 1</h3>
+                        <p class="text-gray-700 mb-4">A brief description of the project goes here. It should be concise and informative.</p>
+                        <div class="flex flex-wrap mb-4">
+                            <span class="bg-gray-200 text-gray-800 text-sm font-medium mr-2 mb-2 px-2.5 py-0.5 rounded">React</span>
+                            <span class="bg-gray-200 text-gray-800 text-sm font-medium mr-2 mb-2 px-2.5 py-0.5 rounded">Node.js</span>
+                            <span class="bg-gray-200 text-gray-800 text-sm font-medium mr-2 mb-2 px-2.5 py-0.5 rounded">MongoDB</span>
                         </div>
-                        <div class="logo-item">
-                            <img src="HTML.png" alt="HTML" class="logo-image">
-                            <span class="logo-text">HTML</span>
+                        <div class="flex justify-between">
+                            <a href="#" class="text-blue-600 hover:underline">Live Demo</a>
+                            <a href="#" class="text-blue-600 hover:underline">GitHub</a>
                         </div>
-                        <div class="logo-item">
-                            <img src="CSS.png" alt="CSS" class="logo-image">
-                            <span class="logo-text">CSS</span>
+                    </div>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://via.placeholder.com/400x250" alt="Project Screenshot" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Project Title 2</h3>
+                        <p class="text-gray-700 mb-4">A brief description of the project goes here. It should be concise and informative.</p>
+                        <div class="flex flex-wrap mb-4">
+                            <span class="bg-gray-200 text-gray-800 text-sm font-medium mr-2 mb-2 px-2.5 py-0.5 rounded">Vue.js</span>
+                            <span class="bg-gray-200 text-gray-800 text-sm font-medium mr-2 mb-2 px-2.5 py-0.5 rounded">Firebase</span>
                         </div>
-                        <div class="logo-item">
-                            <img src="Python.png" alt="Python" class="logo-image">
-                            <span class="logo-text">Python</span>
+                        <div class="flex justify-between">
+                            <a href="#" class="text-blue-600 hover:underline">Live Demo</a>
+                            <a href="#" class="text-blue-600 hover:underline">GitHub</a>
                         </div>
-                        <!-- Duplicate for seamless loop -->
-                        <div class="logo-item">
-                            <img src="C++.jpeg" alt="C++" class="logo-image">
-                            <span class="logo-text">C++</span>
+                    </div>
+                </div>
+                <!-- Project Card 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://via.placeholder.com/400x250" alt="Project Screenshot" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Project Title 3</h3>
+                        <p class="text-gray-700 mb-4">A brief description of the project goes here. It should be concise and informative.</p>
+                        <div class="flex flex-wrap mb-4">
+                            <span class="bg-gray-200 text-gray-800 text-sm font-medium mr-2 mb-2 px-2.5 py-0.5 rounded">Angular</span>
+                            <span class="bg-gray-200 text-gray-800 text-sm font-medium mr-2 mb-2 px-2.5 py-0.5 rounded">.NET Core</span>
                         </div>
-                        <div class="logo-item">
-                            <img src="HTML.png" alt="HTML" class="logo-image">
-                            <span class="logo-text">HTML</span>
-                        </div>
-                        <div class="logo-item">
-                            <img src="CSS.png" alt="CSS" class="logo-image">
-                            <span class="logo-text">CSS</span>
-                        </div>
-                        <div class="logo-item">
-                            <img src="Python.png" alt="Python" class="logo-image">
-                            <span class="logo-text">Python</span>
+                        <div class="flex justify-between">
+                            <a href="#" class="text-blue-600 hover:underline">Live Demo</a>
+                            <a href="#" class="text-blue-600 hover:underline">GitHub</a>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">My Skills</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">I have a diverse range of skills, spanning across web development, programming, and design.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Frontend -->
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="flex items-center mb-4">
+                        <i data-feather="code" class="w-8 h-8 text-blue-600"></i>
+                        <h3 class="text-xl font-bold ml-4">Frontend</h3>
+                    </div>
+                    <ul class="text-gray-700">
+                        <li class="flex items-center mb-2">
+                            <i data-feather="check-circle" class="w-4 h-4 mr-2 text-green-500"></i>
+                            HTML
+                        </li>
+                        <li class="flex items-center mb-2">
+                            <i data-feather="check-circle" class="w-4 h-4 mr-2 text-green-500"></i>
+                            CSS
+                        </li>
+                        <li class="flex items-center mb-2">
+                            <i data-feather="check-circle" class="w-4 h-4 mr-2 text-green-500"></i>
+                            JavaScript
+                        </li>
+                        <li class="flex items-center mb-2">
+                            <i data-feather="check-circle" class="w-4 h-4 mr-2 text-green-500"></i>
+                            Tailwind CSS
+                        </li>
+                    </ul>
+                </div>
+                <!-- Backend -->
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="flex items-center mb-4">
+                        <i data-feather="database" class="w-8 h-8 text-blue-600"></i>
+                        <h3 class="text-xl font-bold ml-4">Backend</h3>
+                    </div>
+                    <ul class="text-gray-700">
+                        <li class="flex items-center mb-2">
+                            <i data-feather="check-circle" class="w-4 h-4 mr-2 text-green-500"></i>
+                            Python
+                        </li>
+                        <li class="flex items-center mb-2">
+                            <i data-feather="check-circle" class="w-4 h-4 mr-2 text-green-500"></i>
+                            C++
+                        </li>
+                    </ul>
+                </div>
+                <!-- Tools -->
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="flex items-center mb-4">
+                        <i data-feather="tool" class="w-8 h-8 text-blue-600"></i>
+                        <h3 class="text-xl font-bold ml-4">Tools</h3>
+                    </div>
+                    <ul class="text-gray-700">
+                        <li class="flex items-center mb-2">
+                            <i data-feather="check-circle" class="w-4 h-4 mr-2 text-green-500"></i>
+                            Git & GitHub
+                        </li>
+                        <li class="flex items-center mb-2">
+                            <i data-feather="check-circle" class="w-4 h-4 mr-2 text-green-500"></i>
+                            VS Code
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">My Experience</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">A timeline of my work experience and education.</p>
+            </div>
+            <div class="relative">
+                <!-- Vertical Line -->
+                <div class="absolute left-1/2 transform -translate-x-1/2 h-full border-l-2 border-gray-300"></div>
+
+                <!-- Timeline Item 1 -->
+                <div class="mb-8 flex justify-between items-center w-full right-timeline">
+                    <div class="order-1 w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-8 h-8 rounded-full">
+                        <h1 class="mx-auto font-semibold text-lg text-white">1</h1>
+                    </div>
+                    <div class="order-1 bg-blue-400 rounded-lg shadow-xl w-5/12 px-6 py-4">
+                        <h3 class="mb-3 font-bold text-white text-xl">Job Title 1</h3>
+                        <p class="text-sm leading-snug tracking-wide text-white text-opacity-100">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesentium, cumque.</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
+                    <div class="order-1 w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-8 h-8 rounded-full">
+                        <h1 class="mx-auto text-white font-semibold text-lg">2</h1>
+                    </div>
+                    <div class="order-1 bg-gray-400 rounded-lg shadow-xl w-5/12 px-6 py-4">
+                        <h3 class="mb-3 font-bold text-gray-800 text-xl">Job Title 2</h3>
+                        <p class="text-sm font-medium leading-snug tracking-wide text-gray-800 text-opacity-100">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesentium, cumque.</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3 -->
+                <div class="mb-8 flex justify-between items-center w-full right-timeline">
+                    <div class="order-1 w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-8 h-8 rounded-full">
+                        <h1 class="mx-auto font-semibold text-lg text-white">3</h1>
+                    </div>
+                    <div class="order-1 bg-blue-400 rounded-lg shadow-xl w-5/12 px-6 py-4">
+                        <h3 class="mb-3 font-bold text-white text-xl">Education</h3>
+                        <p class="text-sm leading-snug tracking-wide text-white text-opacity-100">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesentium, cumque.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">My Achievements</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">I'm proud of the following achievements.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Achievement Card 1 -->
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="flex items-center mb-4">
+                        <i data-feather="award" class="w-8 h-8 text-yellow-500"></i>
+                        <h3 class="text-xl font-bold ml-4">Achievement 1</h3>
+                    </div>
+                    <p class="text-gray-700">A brief description of the achievement goes here.</p>
+                </div>
+                <!-- Achievement Card 2 -->
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="flex items-center mb-4">
+                        <i data-feather="award" class="w-8 h-8 text-yellow-500"></i>
+                        <h3 class="text-xl font-bold ml-4">Achievement 2</h3>
+                    </div>
+                    <p class="text-gray-700">A brief description of the achievement goes here.</p>
+                </div>
+                <!-- Achievement Card 3 -->
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="flex items-center mb-4">
+                        <i data-feather="award" class="w-8 h-8 text-yellow-500"></i>
+                        <h3 class="text-xl font-bold ml-4">Achievement 3</h3>
+                    </div>
+                    <p class="text-gray-700">A brief description of the achievement goes here.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Testimonials</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">What people are saying about my work.</p>
+            </div>
+            <div class="flex justify-center">
+                <div class="max-w-3xl">
+                    <div class="bg-white rounded-lg shadow-lg p-8">
+                        <div class="flex items-center mb-4">
+                            <img src="https://via.placeholder.com/100" alt="Client" class="w-16 h-16 rounded-full object-cover">
+                            <div class="ml-4">
+                                <h3 class="font-bold">Client Name</h3>
+                                <p class="text-gray-600">CEO, Company</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700">"Working with Zaid was a pleasure. He is a talented developer who is passionate about his work. I would highly recommend him to anyone looking for a reliable and skilled developer."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     
@@ -292,10 +462,75 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-6 bg-gray-800 text-white text-center">
-        <div class="container mx-auto px-6">
-            <p>© Copyright <span class="font-bold">Zaid Sohail</span>. All Rights Reserved</p>
-            <p class="mt-2">Designed by <a href="#" class="text-blue-400 hover:underline">Zaid Sohail</a></p>
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="md:flex md:justify-between">
+                <div class="mb-6 md:mb-0">
+                    <a href="#home" class="text-2xl font-bold">Zaid Sohail</a>
+                </div>
+                <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold uppercase">Quick Links</h2>
+                        <ul class="text-gray-400">
+                            <li class="mb-4">
+                                <a href="#about" class="hover:underline">About</a>
+                            </li>
+                            <li class="mb-4">
+                                <a href="#work" class="hover:underline">Projects</a>
+                            </li>
+                            <li class="mb-4">
+                                <a href="#contact" class="hover:underline">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold uppercase">Follow me</h2>
+                        <ul class="text-gray-400">
+                            <li class="mb-4">
+                                <a href="https://github.com/zaidsohail" class="hover:underline " target="_blank" rel="noopener noreferrer">Github</a>
+                            </li>
+                            <li class="mb-4">
+                                <a href="https://www.linkedin.com/in/h-zaid01" class="hover:underline" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold uppercase">Legal</h2>
+                        <ul class="text-gray-400">
+                            <li class="mb-4">
+                                <a href="#" class="hover:underline">Privacy Policy</a>
+                            </li>
+                            <li>
+                                <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-6 border-gray-700 sm:mx-auto lg:my-8" />
+            <div class="sm:flex sm:items-center sm:justify-between">
+                <span class="text-sm text-gray-400 sm:text-center">© 2025 <a href="#home" class="hover:underline">Zaid Sohail™</a>. All Rights Reserved.
+                </span>
+                <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
+                    <a href="https://www.facebook.com/h.zaid.sohail" class="text-gray-400 hover:text-white">
+                        <i data-feather="facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/h.zaid01" class="text-gray-400 hover:text-white">
+                        <i data-feather="instagram"></i>
+                    </a>
+                    <a href="https://x.com/zaidsohail345" class="text-gray-400 hover:text-white">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                        </svg>
+                    </a>
+                    <a href="https://github.com/zaidsohail" class="text-gray-400 hover:text-white">
+                        <i data-feather="github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/h-zaid01" class="text-gray-400 hover:text-white">
+                        <i data-feather="linkedin"></i>
+                    </a>
+                </div>
+            </div>
         </div>
     </footer>
 
@@ -722,5 +957,6 @@
             grid.addEventListener('pointerleave', onLeave);
         })();
     </script>
+    <script src="scripts.js"></script>
 </body>
 </html>
