@@ -358,6 +358,12 @@ textarea:focus {
 .chroma-card::after {
     content: "";
     position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 200ms ease;
+}
 .chroma-card:hover::after { opacity: 1; }
 .chroma-img-wrapper { width: 100%; height: 160px; display: grid; place-items: center; background: var(--background-color); }
 .chroma-img-wrapper img { max-width: 100%; max-height: 100%; object-fit: contain; }
@@ -461,6 +467,124 @@ nav a.active {
 :root.dark .w-10.h-10.bg-blue-600 { background-color: #2563eb !important; color: #fff !important; }
 /* Reduce shine animation intensity when in dark mode to avoid glare */
 :root.dark .shiny-text { opacity: 0.92; }
+
+/* User-supplied dark palette (compatible with both `html.dark` and `html.dark-mode`) */
+:root {
+    --dm-bg: #0b0b0d;
+    --dm-surface: #0f1113;
+    --dm-muted: #9aa3ad;
+    --dm-text: #e6eef6;
+    --dm-accent: #4aa3ff;
+    --dm-border: rgba(255,255,255,0.06);
+}
+
+/* Apply when dark class is present on <html> (support both class names) */
+html.dark, html.dark-mode,
+html.dark body, html.dark-mode body {
+    background: var(--dm-bg) !important;
+    color: var(--dm-text) !important;
+}
+
+/* Force almost everything to dark surfaces (exclude media and svg) */
+html.dark *:not(svg):not(canvas):not(video):not(img),
+html.dark-mode *:not(svg):not(canvas):not(video):not(img),
+html.dark *:before, html.dark-mode *:before,
+html.dark *:after, html.dark-mode *:after {
+    background-color: transparent !important;
+    background-image: none !important;
+    color: inherit !important;
+    border-color: var(--dm-border) !important;
+    box-shadow: none !important;
+}
+
+/* Specific common elements */
+html.dark body,
+html.dark main,
+html.dark header,
+html.dark section,
+html.dark article,
+html.dark nav,
+html.dark footer,
+html.dark .card,
+html.dark .panel,
+html.dark-mode body,
+html.dark-mode main,
+html.dark-mode header,
+html.dark-mode section,
+html.dark-mode article,
+html.dark-mode nav,
+html.dark-mode footer,
+html.dark-mode .card,
+html.dark-mode .panel {
+    background-color: var(--dm-surface) !important;
+    color: var(--dm-text) !important;
+}
+
+/* Links, buttons, accents */
+html.dark a, html.dark button, html.dark .btn,
+html.dark-mode a, html.dark-mode button, html.dark-mode .btn {
+    color: var(--dm-accent) !important;
+}
+
+/* Inputs / selects / textareas */
+html.dark input, html.dark select, html.dark textarea, html.dark .input,
+html.dark-mode input, html.dark-mode select, html.dark-mode textarea, html.dark-mode .input {
+    background-color: #0c0c0e !important;
+    color: var(--dm-text) !important;
+    border: 1px solid var(--dm-border) !important;
+    caret-color: var(--dm-text) !important;
+}
+
+/* Tables */
+html.dark table, html.dark thead, html.dark tbody, html.dark tr, html.dark td, html.dark th,
+html.dark-mode table, html.dark-mode thead, html.dark-mode tbody, html.dark-mode tr, html.dark-mode td, html.dark-mode th {
+    background-color: transparent !important;
+    color: inherit !important;
+    border-color: var(--dm-border) !important;
+}
+
+/* SVG color inheritance */
+html.dark svg[fill="currentColor"], html.dark svg[stroke="currentColor"],
+html.dark-mode svg[fill="currentColor"], html.dark-mode svg[stroke="currentColor"] {
+    color: var(--dm-text) !important;
+}
+
+/* Prevent white backgrounds from inline styles */
+html.dark [style*="background"], html.dark [style*="background-color"],
+html.dark-mode [style*="background"], html.dark-mode [style*="background-color"] {
+    background-color: transparent !important;
+}
+
+/* Restore hero/background image when dark mode is active (explicitly opt-in) */
+html.dark .bg-image,
+html.dark-mode .bg-image {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('zaid.JPG') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+/* Allow opt-in image inversion via class */
+html.dark img.invert-img, html.dark-mode img.invert-img {
+    filter: invert(1) hue-rotate(180deg) contrast(0.9) !important;
+    background-color: transparent !important;
+}
+
+/* Iframes */
+html.dark iframe, html.dark-mode iframe { background-color: var(--dm-surface) !important; }
+
+/* Accessibility focus */
+html.dark :focus, html.dark-mode :focus {
+    outline: 2px solid var(--dm-accent) !important;
+    outline-offset: 2px !important;
+}
+
+/* Helper utility to force-dark for third-party elements */
+.force-dark {
+    background-color: var(--dm-surface) !important;
+    color: var(--dm-text) !important;
+    border-color: var(--dm-border) !important;
+}
 
 :root.dark body {
     background-color: var(--background-color);
