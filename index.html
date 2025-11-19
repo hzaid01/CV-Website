@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-        <script>
+    <script>
         /* Run before paint to avoid white flashes - aligns with existing theme key 'theme' and class 'dark' */
-        (function(){
+        (function () {
             try {
                 const preferDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
                 const saved = localStorage.getItem('theme'); // "dark" or "light"
                 const useDark = saved === 'dark' || (!saved && preferDark);
-                if(useDark) document.documentElement.classList.add('dark');
+                if (useDark) document.documentElement.classList.add('dark');
                 else document.documentElement.classList.remove('dark');
-            } catch(e) { /* ignore */ }
+            } catch (e) { /* ignore */ }
         })();
-        </script>
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zaid Sohail CV</title>
-    <meta name="description" content="The personal portfolio of Zaid Sohail, a passionate developer creating modern and responsive web applications.">
+    <meta name="description"
+        content="The personal portfolio of Zaid Sohail, a passionate developer creating modern and responsive web applications.">
     <meta property="og:title" content="Zaid Sohail - Developer Portfolio" />
-    <meta property="og:description" content="The personal portfolio of Zaid Sohail, a passionate developer creating modern and responsive web applications." />
+    <meta property="og:description"
+        content="The personal portfolio of Zaid Sohail, a passionate developer creating modern and responsive web applications." />
     <meta property="og:image" content="https://via.placeholder.com/1200x630" />
     <meta property="og:url" content="https://zaidsohail.github.io/CV-website/" />
     <meta name="twitter:card" content="summary_large_image">
@@ -35,8 +38,9 @@
     <!-- GSAP + ScrollTrigger -->
     <script src="https://unpkg.com/gsap@3/dist/gsap.min.js" defer></script>
     <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js" defer></script>
-    
+
 </head>
+
 <body class="font-sans">
     <!-- Navigation -->
     <nav class="fixed w-full bg-white shadow-md z-50">
@@ -60,38 +64,32 @@
         </div>
     </nav>
 
-    <!-- New Hero Section -->
-    <section id="new-home" class="py-20 lg:py-40">
+    <!-- Hero Section -->
+    <section id="home" class="py-20 lg:py-40">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row items-center justify-between">
                 <div class="md:w-1/2 mb-10 md:mb-0">
                     <span class="text-blue-500 font-semibold">Hey, I'm Zaid Sohail</span>
                     <h1 class="text-4xl md:text-6xl font-bold mt-2 mb-4">I Build & Design Web Experiences.</h1>
-                    <p class="text-lg text-gray-600 mb-8">I'm a passionate developer, creating modern and responsive web applications. I specialize in turning ideas into beautiful, functional products.</p>
+                    <p class="text-lg text-gray-600 mb-8">I'm a passionate developer, creating modern and responsive web
+                        applications. I specialize in turning ideas into beautiful, functional products.</p>
                     <div class="flex space-x-4">
-                        <a href="#work" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300">My Work</a>
-                        <a href="#" id="download-pdf" class="px-6 py-3 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition duration-300">Download as PDF</a>
+                        <a href="#work"
+                            class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300">My
+                            Work</a>
+                        <a href="#" id="download-pdf"
+                            class="px-6 py-3 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition duration-300">Download
+                            as PDF</a>
                     </div>
                 </div>
                 <div class="md:w-1/2">
-                    <img src="https://via.placeholder.com/500" alt="Illustration of a developer working" class="rounded-lg shadow-lg">
+                    <img src="https://via.placeholder.com/500" alt="Illustration of a developer working"
+                        class="rounded-lg shadow-lg">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Hero Section -->
-    <section id="home" class="bg-image min-h-screen flex items-center justify-center text-white pt-20">
-        <div class="container mx-auto px-6 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4 shiny-text scroll-float">I'm Zaid Sohail</h1>
-            <p class="text-xl md:text-2xl mb-8">Developer | Designer | Student</p>
-            <div class="animate-bounce">
-                <a href="#about" class="inline-block">
-                    <i data-feather="arrow-down-circle" class="w-10 h-10"></i>
-                </a>
-            </div>
-        </div>
-    </section>
 
     <!-- About Section -->
     <section id="about" class="py-20 bg-white">
@@ -103,20 +101,31 @@
                 <div class="md:w-1/2 md:pl-12">
                     <h2 class="text-3xl font-bold mb-6">About Me</h2>
                     <p class="text-gray-600 mb-4">
-                        I am a passionate and driven Computer Science student with a strong foundation in software development and problem-solving. I thrive on challenges and am constantly seeking opportunities to learn and grow in the ever-evolving world of technology.
+                        I am a passionate and driven Computer Science student with a strong foundation in software
+                        development and problem-solving. I thrive on challenges and am constantly seeking opportunities
+                        to learn and grow in the ever-evolving world of technology.
                     </p>
                     <p class="text-gray-600 mb-4">
-                        My journey in programming began with a fascination for how things work, which has since blossomed into a love for crafting elegant and efficient solutions. I am proficient in C++, Python, and web technologies, and I am always eager to expand my skillset.
+                        My journey in programming began with a fascination for how things work, which has since
+                        blossomed into a love for crafting elegant and efficient solutions. I am proficient in C++,
+                        Python, and web technologies, and I am always eager to expand my skillset.
                     </p>
                     <div class="mt-6">
                         <h3 class="font-bold mb-2">My Skills</h3>
                         <div class="flex flex-wrap">
-                            <span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 mb-2 px-2.5 py-0.5 rounded">C++</span>
-                            <span class="bg-green-100 text-green-800 text-sm font-medium mr-2 mb-2 px-2.5 py-0.5 rounded">Python</span>
-                            <span class="bg-yellow-100 text-yellow-800 text-sm font-medium mr-2 mb-2 px-2.5 py-0.5 rounded">HTML</span>
-                            <span class="bg-indigo-100 text-indigo-800 text-sm font-medium mr-2 mb-2 px-2.5 py-0.5 rounded">CSS</span>
-                            <span class="bg-pink-100 text-pink-800 text-sm font-medium mr-2 mb-2 px-2.5 py-0.5 rounded">JavaScript</span>
-                            <span class="bg-purple-100 text-purple-800 text-sm font-medium mr-2 mb-2 px-2.5 py-0.5 rounded">Tailwind CSS</span>
+                            <span
+                                class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 mb-2 px-2.5 py-0.5 rounded">C++</span>
+                            <span
+                                class="bg-green-100 text-green-800 text-sm font-medium mr-2 mb-2 px-2.5 py-0.5 rounded">Python</span>
+                            <span
+                                class="bg-yellow-100 text-yellow-800 text-sm font-medium mr-2 mb-2 px-2.5 py-0.5 rounded">HTML</span>
+                            <span
+                                class="bg-indigo-100 text-indigo-800 text-sm font-medium mr-2 mb-2 px-2.5 py-0.5 rounded">CSS</span>
+                            <span
+                                class="bg-pink-100 text-pink-800 text-sm font-medium mr-2 mb-2 px-2.5 py-0.5 rounded">JavaScript</span>
+                            <span
+                                class="bg-purple-100 text-purple-800 text-sm font-medium mr-2 mb-2 px-2.5 py-0.5 rounded">Tailwind
+                                CSS</span>
                         </div>
                     </div>
                 </div>
@@ -167,14 +176,19 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project Card 1 -->
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img src="https://via.placeholder.com/400x250" alt="Project Screenshot" class="w-full h-48 object-cover">
+                    <img src="https://via.placeholder.com/400x250" alt="Project Screenshot"
+                        class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Project Title 1</h3>
-                        <p class="text-gray-700 mb-4">A brief description of the project goes here. It should be concise and informative.</p>
+                        <p class="text-gray-700 mb-4">A brief description of the project goes here. It should be concise
+                            and informative.</p>
                         <div class="flex flex-wrap mb-4">
-                            <span class="bg-gray-200 text-gray-800 text-sm font-medium mr-2 mb-2 px-2.5 py-0.5 rounded">React</span>
-                            <span class="bg-gray-200 text-gray-800 text-sm font-medium mr-2 mb-2 px-2.5 py-0.5 rounded">Node.js</span>
-                            <span class="bg-gray-200 text-gray-800 text-sm font-medium mr-2 mb-2 px-2.5 py-0.5 rounded">MongoDB</span>
+                            <span
+                                class="bg-gray-200 text-gray-800 text-sm font-medium mr-2 mb-2 px-2.5 py-0.5 rounded">React</span>
+                            <span
+                                class="bg-gray-200 text-gray-800 text-sm font-medium mr-2 mb-2 px-2.5 py-0.5 rounded">Node.js</span>
+                            <span
+                                class="bg-gray-200 text-gray-800 text-sm font-medium mr-2 mb-2 px-2.5 py-0.5 rounded">MongoDB</span>
                         </div>
                         <div class="flex justify-between">
                             <a href="#" class="text-blue-600 hover:underline">Live Demo</a>
@@ -184,13 +198,17 @@
                 </div>
                 <!-- Project Card 2 -->
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img src="https://via.placeholder.com/400x250" alt="Project Screenshot" class="w-full h-48 object-cover">
+                    <img src="https://via.placeholder.com/400x250" alt="Project Screenshot"
+                        class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Project Title 2</h3>
-                        <p class="text-gray-700 mb-4">A brief description of the project goes here. It should be concise and informative.</p>
+                        <p class="text-gray-700 mb-4">A brief description of the project goes here. It should be concise
+                            and informative.</p>
                         <div class="flex flex-wrap mb-4">
-                            <span class="bg-gray-200 text-gray-800 text-sm font-medium mr-2 mb-2 px-2.5 py-0.5 rounded">Vue.js</span>
-                            <span class="bg-gray-200 text-gray-800 text-sm font-medium mr-2 mb-2 px-2.5 py-0.5 rounded">Firebase</span>
+                            <span
+                                class="bg-gray-200 text-gray-800 text-sm font-medium mr-2 mb-2 px-2.5 py-0.5 rounded">Vue.js</span>
+                            <span
+                                class="bg-gray-200 text-gray-800 text-sm font-medium mr-2 mb-2 px-2.5 py-0.5 rounded">Firebase</span>
                         </div>
                         <div class="flex justify-between">
                             <a href="#" class="text-blue-600 hover:underline">Live Demo</a>
@@ -200,13 +218,18 @@
                 </div>
                 <!-- Project Card 3 -->
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img src="https://via.placeholder.com/400x250" alt="Project Screenshot" class="w-full h-48 object-cover">
+                    <img src="https://via.placeholder.com/400x250" alt="Project Screenshot"
+                        class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Project Title 3</h3>
-                        <p class="text-gray-700 mb-4">A brief description of the project goes here. It should be concise and informative.</p>
+                        <p class="text-gray-700 mb-4">A brief description of the project goes here. It should be concise
+                            and informative.</p>
                         <div class="flex flex-wrap mb-4">
-                            <span class="bg-gray-200 text-gray-800 text-sm font-medium mr-2 mb-2 px-2.5 py-0.5 rounded">Angular</span>
-                            <span class="bg-gray-200 text-gray-800 text-sm font-medium mr-2 mb-2 px-2.5 py-0.5 rounded">.NET Core</span>
+                            <span
+                                class="bg-gray-200 text-gray-800 text-sm font-medium mr-2 mb-2 px-2.5 py-0.5 rounded">Angular</span>
+                            <span
+                                class="bg-gray-200 text-gray-800 text-sm font-medium mr-2 mb-2 px-2.5 py-0.5 rounded">.NET
+                                Core</span>
                         </div>
                         <div class="flex justify-between">
                             <a href="#" class="text-blue-600 hover:underline">Live Demo</a>
@@ -223,7 +246,8 @@
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-3xl font-bold mb-4">My Skills</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">I have a diverse range of skills, spanning across web development, programming, and design.</p>
+                <p class="text-gray-600 max-w-2xl mx-auto">I have a diverse range of skills, spanning across web
+                    development, programming, and design.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Frontend -->
@@ -308,7 +332,8 @@
                     </div>
                     <div class="order-1 bg-blue-400 rounded-lg shadow-xl w-5/12 px-6 py-4">
                         <h3 class="mb-3 font-bold text-white text-xl">Job Title 1</h3>
-                        <p class="text-sm leading-snug tracking-wide text-white text-opacity-100">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesentium, cumque.</p>
+                        <p class="text-sm leading-snug tracking-wide text-white text-opacity-100">Lorem ipsum dolor sit
+                            amet, consectetur adipiscing elit. Praesentium, cumque.</p>
                     </div>
                 </div>
 
@@ -320,7 +345,8 @@
                     </div>
                     <div class="order-1 bg-gray-400 rounded-lg shadow-xl w-5/12 px-6 py-4">
                         <h3 class="mb-3 font-bold text-gray-800 text-xl">Job Title 2</h3>
-                        <p class="text-sm font-medium leading-snug tracking-wide text-gray-800 text-opacity-100">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesentium, cumque.</p>
+                        <p class="text-sm font-medium leading-snug tracking-wide text-gray-800 text-opacity-100">Lorem
+                            ipsum dolor sit amet, consectetur adipiscing elit. Praesentium, cumque.</p>
                     </div>
                 </div>
 
@@ -332,7 +358,8 @@
                     </div>
                     <div class="order-1 bg-blue-400 rounded-lg shadow-xl w-5/12 px-6 py-4">
                         <h3 class="mb-3 font-bold text-white text-xl">Education</h3>
-                        <p class="text-sm leading-snug tracking-wide text-white text-opacity-100">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesentium, cumque.</p>
+                        <p class="text-sm leading-snug tracking-wide text-white text-opacity-100">Lorem ipsum dolor sit
+                            amet, consectetur adipiscing elit. Praesentium, cumque.</p>
                     </div>
                 </div>
             </div>
@@ -386,20 +413,23 @@
                 <div class="max-w-3xl">
                     <div class="bg-white rounded-lg shadow-lg p-8">
                         <div class="flex items-center mb-4">
-                            <img src="https://via.placeholder.com/100" alt="Client" class="w-16 h-16 rounded-full object-cover">
+                            <img src="https://via.placeholder.com/100" alt="Client"
+                                class="w-16 h-16 rounded-full object-cover">
                             <div class="ml-4">
                                 <h3 class="font-bold">Client Name</h3>
                                 <p class="text-gray-600">CEO, Company</p>
                             </div>
                         </div>
-                        <p class="text-gray-700">"Working with Zaid was a pleasure. He is a talented developer who is passionate about his work. I would highly recommend him to anyone looking for a reliable and skilled developer."</p>
+                        <p class="text-gray-700">"Working with Zaid was a pleasure. He is a talented developer who is
+                            passionate about his work. I would highly recommend him to anyone looking for a reliable and
+                            skilled developer."</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    
+
 
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-gray-100">
@@ -408,28 +438,40 @@
                 <div class="md:w-1/2 mb-10 md:mb-0 md:pr-6">
                     <h2 class="text-3xl font-bold mb-6 scroll-float">Send Us a Message</h2>
                     <!-- Contact form: mailto fallback + JS handler to open user's email client -->
-                    <form id="contact-form" class="space-y-6" action="mailto:zaidsohail555@gmail.com" method="post" enctype="text/plain">
+                    <form id="contact-form" class="space-y-6" action="mailto:zaidsohail555@gmail.com" method="post"
+                        enctype="text/plain">
                         <div>
-                            <input id="contact-name" name="name" type="text" placeholder="Your Name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                            <input id="contact-name" name="name" type="text" placeholder="Your Name"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                required>
                         </div>
                         <div>
-                            <input id="contact-email" name="email" type="email" placeholder="Your Email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                            <input id="contact-email" name="email" type="email" placeholder="Your Email"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                required>
                         </div>
                         <div>
-                            <input id="contact-subject" name="subject" type="text" placeholder="Subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                            <input id="contact-subject" name="subject" type="text" placeholder="Subject"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                required>
                         </div>
                         <div>
-                            <textarea id="contact-message" name="message" placeholder="Message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+                            <textarea id="contact-message" name="message" placeholder="Message" rows="5"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                required></textarea>
                         </div>
                         <div>
-                            <button type="submit" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300">Send Message</button>
+                            <button type="submit"
+                                class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300">Send
+                                Message</button>
                         </div>
                     </form>
                 </div>
                 <div class="md:w-1/2 md:pl-6">
                     <h2 class="text-3xl font-bold mb-6 scroll-float">Get in Touch</h2>
                     <p class="text-gray-600 mb-6">
-                        If you'd like to collaborate, hire me, or have a question, please use the contact form or the details on the right — I’ll respond as soon as possible.
+                        If you'd like to collaborate, hire me, or have a question, please use the contact form or the
+                        details on the right — I’ll respond as soon as possible.
                     </p>
                     <div class="space-y-4">
                         <div class="flex items-start">
@@ -455,16 +497,24 @@
                         </div>
                     </div>
                     <div class="mt-8 flex space-x-4">
-                        <a href="https://www.facebook.com/h.zaid.sohail" target="_blank" rel="noopener noreferrer" title="Facebook" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white">
+                        <a href="https://www.facebook.com/h.zaid.sohail" target="_blank" rel="noopener noreferrer"
+                            title="Facebook"
+                            class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white">
                             <i data-feather="facebook"></i>
                         </a>
-                            <a href="https://x.com/zaidsohail345" target="_blank" rel="noopener noreferrer" title="X (Twitter)" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white">
-                                X
-                            </a>
-                        <a href="https://www.instagram.com/h.zaid01" target="_blank" rel="noopener noreferrer" title="Instagram" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white">
+                        <a href="https://x.com/zaidsohail345" target="_blank" rel="noopener noreferrer"
+                            title="X (Twitter)"
+                            class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white">
+                            X
+                        </a>
+                        <a href="https://www.instagram.com/h.zaid01" target="_blank" rel="noopener noreferrer"
+                            title="Instagram"
+                            class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white">
                             <i data-feather="instagram"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/h-zaid01" target="_blank" rel="noopener noreferrer" title="LinkedIn" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white">
+                        <a href="https://www.linkedin.com/in/h-zaid01" target="_blank" rel="noopener noreferrer"
+                            title="LinkedIn"
+                            class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white">
                             <i data-feather="linkedin"></i>
                         </a>
                     </div>
@@ -499,10 +549,12 @@
                         <h2 class="mb-6 text-sm font-semibold uppercase">Follow me</h2>
                         <ul class="text-gray-400">
                             <li class="mb-4">
-                                <a href="https://github.com/hzaid01" class="hover:underline " target="_blank" rel="noopener noreferrer">Github</a>
+                                <a href="https://github.com/hzaid01" class="hover:underline " target="_blank"
+                                    rel="noopener noreferrer">Github</a>
                             </li>
                             <li class="mb-4">
-                                <a href="https://www.linkedin.com/in/h-zaid01" class="hover:underline" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                                <a href="https://www.linkedin.com/in/h-zaid01" class="hover:underline" target="_blank"
+                                    rel="noopener noreferrer">LinkedIn</a>
                             </li>
                         </ul>
                     </div>
@@ -521,7 +573,8 @@
             </div>
             <hr class="my-6 border-gray-700 sm:mx-auto lg:my-8" />
             <div class="sm:flex sm:items-center sm:justify-between">
-                <span class="text-sm text-gray-400 sm:text-center">© 2025 <a href="#home" class="hover:underline">Zaid Sohail™</a>. All Rights Reserved.
+                <span class="text-sm text-gray-400 sm:text-center">© 2025 <a href="#home" class="hover:underline">Zaid
+                        Sohail™</a>. All Rights Reserved.
                 </span>
                 <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
                     <a href="https://www.facebook.com/h.zaid.sohail" class="text-gray-400 hover:text-white">
@@ -532,7 +585,8 @@
                     </a>
                     <a href="https://x.com/zaidsohail345" class="text-gray-400 hover:text-white">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                            <path
+                                d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
                         </svg>
                     </a>
                     <a href="https://github.com/hzaid01" class="text-gray-400 hover:text-white">
@@ -547,12 +601,14 @@
     </footer>
 
     <!-- Back to top button -->
-    <a href="#home" class="fixed bottom-6 right-6 bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-blue-700 transition duration-300">
+    <a href="#home"
+        class="fixed bottom-6 right-6 bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-blue-700 transition duration-300">
         <i data-feather="arrow-up"></i>
     </a>
 
     <!-- ClickSpark Canvas -->
-    <canvas id="click-spark-canvas" style="position:fixed;inset:0;pointer-events:none;z-index:60;display:block;width:100vw;height:100vh"></canvas>
+    <canvas id="click-spark-canvas"
+        style="position:fixed;inset:0;pointer-events:none;z-index:60;display:block;width:100vw;height:100vh"></canvas>
 
     <script>
         // GSAP ScrollFloat effect for headings
@@ -635,7 +691,7 @@
                 wrap.style.setProperty('--background-x', adjust(percentX, 0, 100, 35, 65) + '%');
                 wrap.style.setProperty('--background-y', adjust(percentY, 0, 100, 35, 65) + '%');
                 wrap.style.setProperty('--pointer-from-center', Math.min(Math.hypot(centerX, centerY) / 50, 1));
-                card.style.transform = `rotateX(${(centerY/4).toFixed(2)}deg) rotateY(${(-centerX/5).toFixed(2)}deg)`;
+                card.style.transform = `rotateX(${(centerY / 4).toFixed(2)}deg) rotateY(${(-centerX / 5).toFixed(2)}deg)`;
             }
 
             function onEnter() { card.classList.add('active'); }
@@ -644,12 +700,12 @@
                 const startX = e.offsetX, startY = e.offsetY;
                 const start = performance.now();
                 const dur = 500;
-                const cx = card.clientWidth/2, cy = card.clientHeight/2;
-                const ease = t => (t<0.5 ? 4*t*t*t : 1 - Math.pow(-2*t+2,3)/2);
+                const cx = card.clientWidth / 2, cy = card.clientHeight / 2;
+                const ease = t => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
                 const loop = (now) => {
-                    const p = Math.min((now-start)/dur, 1);
+                    const p = Math.min((now - start) / dur, 1);
                     const ep = ease(p);
-                    update(startX + (cx-startX)*ep, startY + (cy-startY)*ep);
+                    update(startX + (cx - startX) * ep, startY + (cy - startY) * ep);
                     if (p < 1) rafId = requestAnimationFrame(loop);
                 };
                 rafId && cancelAnimationFrame(rafId);
@@ -740,37 +796,6 @@
             window.addEventListener('resize', onScroll);
         })();
 
-        // Skill bars: animate sequentially when About becomes visible
-        (function skillBars() {
-            const about = document.getElementById('about');
-            if (!about) return;
-            const bars = Array.from(about.querySelectorAll('.w-full.bg-gray-200 > div'));
-            if (!bars.length) return;
-
-            // normalize: add skill-fill class and capture targets
-            bars.forEach(b => {
-                const s = b.getAttribute('style') || '';
-                const m = s.match(/width:\s*([^;]+);?/i);
-                b.dataset.targetWidth = m ? m[1].trim() : (b.style.width || '80%');
-                b.classList.add('skill-fill');
-                b.style.width = '0%';
-            });
-
-            const io = new IntersectionObserver((entries, obs) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        bars.forEach((b, i) => {
-                            setTimeout(() => {
-                                b.style.width = b.dataset.targetWidth;
-                                b.classList.add('glow');
-                            }, i * 160);
-                        });
-                        obs.disconnect();
-                    }
-                });
-            }, { threshold: 0.25 });
-            io.observe(about);
-        })();
 
         // Back-to-top button visibility
         (function backToTop() {
@@ -785,10 +810,10 @@
         })();
 
         // Contact form mailto handler (preserve original behavior)
-        (function() {
+        (function () {
             const form = document.getElementById('contact-form');
             if (!form) return;
-            form.addEventListener('submit', function(e) {
+            form.addEventListener('submit', function (e) {
                 e.preventDefault();
                 const name = document.getElementById('contact-name').value.trim();
                 const email = document.getElementById('contact-email').value.trim();
@@ -808,36 +833,6 @@
             });
         })();
 
-        // Logo Loop functionality
-        (function logoLoop() {
-            const container = document.querySelector('.logo-loop-container');
-            if (!container) return;
-            
-            const track = container.querySelector('.logo-loop-track');
-            const items = container.querySelectorAll('.logo-item');
-            
-            // Add click handlers for each logo
-            items.forEach(item => {
-                item.addEventListener('click', function() {
-                    const text = this.querySelector('.logo-text').textContent;
-                    console.log(`Clicked on ${text} logo`);
-                    // You can add more functionality here, like opening links
-                });
-            });
-            
-            // Optional: Add intersection observer to pause animation when not visible
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        track.style.animationPlayState = 'running';
-                    } else {
-                        track.style.animationPlayState = 'paused';
-                    }
-                });
-            }, { threshold: 0.1 });
-            
-            observer.observe(container);
-        })();
 
         // ClickSpark - global click spark effect
         (function clickSpark() {
@@ -878,7 +873,7 @@
                 extraScale: 1.0
             };
 
-            function easeOut(t){ return t * (2 - t); }
+            function easeOut(t) { return t * (2 - t); }
 
             function draw(ts) {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -907,13 +902,13 @@
                 animationId = requestAnimationFrame(draw);
             }
 
-            function spawn(e){
+            function spawn(e) {
                 const rect = canvas.getBoundingClientRect();
                 const x = e.clientX - rect.left;
                 const y = e.clientY - rect.top;
                 const now = performance.now();
                 for (let i = 0; i < config.sparkCount; i++) {
-                    sparks.push({ x, y, a: (2*Math.PI*i)/config.sparkCount, start: now });
+                    sparks.push({ x, y, a: (2 * Math.PI * i) / config.sparkCount, start: now });
                 }
             }
 
@@ -928,65 +923,8 @@
             });
         })();
 
-        // Chroma Grid mouse tracking and links
-        (function chromaGrid() {
-            const grid = document.querySelector('.chroma-grid');
-            if (!grid) return;
-            const cards = Array.from(grid.querySelectorAll('.chroma-card'));
-
-            function onMoveCard(e){
-                const rect = this.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                this.style.setProperty('--mouse-x', x + 'px');
-                this.style.setProperty('--mouse-y', y + 'px');
-            }
-
-            function onClickCard(){
-                const url = this.getAttribute('data-url');
-                if (url && url !== '#') window.open(url, '_blank', 'noopener,noreferrer');
-            }
-
-            cards.forEach(card => {
-                card.addEventListener('mousemove', onMoveCard);
-                card.addEventListener('click', onClickCard);
-            });
-
-            // Grid-level spotlight follows pointer
-            const setX = (v)=> grid.style.setProperty('--x', v + 'px');
-            const setY = (v)=> grid.style.setProperty('--y', v + 'px');
-            const rect = () => grid.getBoundingClientRect();
-            function onMove(e){
-                const r = rect();
-                setX(e.clientX - r.left);
-                setY(e.clientY - r.top);
-                grid.querySelector('.chroma-fade').style.opacity = '0';
-            }
-            function onLeave(){
-                grid.querySelector('.chroma-fade').style.opacity = '1';
-            }
-            grid.addEventListener('pointermove', onMove);
-            grid.addEventListener('pointerleave', onLeave);
-        })();
     </script>
     <script src="scripts.js"></script>
-        <!-- Theme toggle (fixed floating button) -->
-        <button id="theme-toggle" aria-label="Toggle dark mode" style="position:fixed;right:16px;bottom:16px;z-index:9999;padding:8px 10px;border-radius:8px;background:var(--primary-color);color:var(--white);border:none;cursor:pointer;">Toggle</button>
-
-        <script>
-        (function(){
-            const btn = document.getElementById('theme-toggle');
-            if(!btn) return;
-            function setMode(mode){
-                if(mode === 'dark') document.documentElement.classList.add('dark');
-                else document.documentElement.classList.remove('dark');
-                try { localStorage.setItem('theme', mode); } catch(e){}
-            }
-            btn.addEventListener('click', () => {
-                const isDark = document.documentElement.classList.toggle('dark');
-                try { localStorage.setItem('theme', isDark ? 'dark' : 'light'); } catch(e){}
-            });
-        })();
-        </script>
 </body>
+
 </html>
