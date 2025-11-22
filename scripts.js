@@ -73,15 +73,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Download CV as PDF
     const downloadPdfButton = document.getElementById('download-pdf');
-    downloadPdfButton.addEventListener('click', () => {
-        const element = document.body;
-        const opt = {
-            margin: 0,
-            filename: 'Zaid_Sohail_CV.pdf',
-            image: { type: 'jpeg', quality: 0.98 },
-            html2canvas: { scale: 2 },
-            jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
-        };
-        html2pdf().set(opt).from(element).save();
+    downloadPdfButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        // Create a temporary anchor element to trigger download
+        const link = document.createElement('a');
+        link.href = 'Zaid Sohail cv.pdf';
+        link.download = 'Zaid_Sohail_CV.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
     });
 });
