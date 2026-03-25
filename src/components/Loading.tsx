@@ -13,7 +13,7 @@ const Loading = ({ percent }: { percent: number }) => {
   // Frame sequence states
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [showScrollPrompt, setShowScrollPrompt] = useState(true);
-  const playIntervalRef = useRef<NodeJS.Timeout | null>(null);
+  const playIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const frameRef = useRef(0);
   const sequencePlayedRef = useRef(false);
   const imagesRef = useRef<HTMLImageElement[]>([]);
