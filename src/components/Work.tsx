@@ -3,36 +3,81 @@ import "./styles/Work.css";
 import WorkImage from "./WorkImage";
 import { MdArrowBack, MdArrowForward } from "react-icons/md";
 
-const projects = [
+interface Project {
+  title: string;
+  category: string;
+  tools: string;
+  image: string;
+  link?: string;
+  year: string;
+}
+
+const projects: Project[] = [
+  {
+    title: "ColdNerd",
+    category: "Full Stack Web Application",
+    tools: "React, Node.js, Full Stack Architecture",
+    image: "/images/project1.jpg",
+    link: "https://coldnerd.com",
+    year: "2024",
+  },
+  {
+    title: "OPBC Investor Community",
+    category: "Cross-Platform Mobile App",
+    tools: "React Native, Supabase, Android/iOS/Web",
+    image: "/images/project2.jpg",
+    link: "https://opbc.vercel.app",
+    year: "2025",
+  },
+  {
+    title: "Instagram Lead Gen & DM Automation",
+    category: "AI-Powered Automation Tool",
+    tools: "Python, Playwright, OpenCV2, BeautifulSoup, PyAutoGUI",
+    image: "/images/project3.jpg",
+    year: "2025",
+  },
+  {
+    title: "Solar Energy Crown",
+    category: "Full Stack Business Platform",
+    tools: "React, Firebase, Netlify",
+    image: "/images/project4.jpg",
+    link: "https://solarenergycrown.netlify.app",
+    year: "2024",
+  },
   {
     title: "Solid Starters",
     category: "Low-Code Platform",
     tools: "Angular, Next.js, NestJS, MongoDB",
     image: "/images/Solidx.png",
+    year: "2023",
   },
   {
     title: "Radix",
     category: "E-Commerce",
     tools: "Angular, Next.js, NestJS, CMS",
     image: "/images/radix.png",
+    year: "2023",
   },
   {
     title: "Bond Cancellation",
     category: "Import-Export Automation",
     tools: "Angular, Next.js, NestJS, Workflows",
     image: "/images/bond.png",
+    year: "2023",
   },
   {
     title: "Sapphire",
     category: "CRM Platform",
     tools: "AngularJS, NestJS, PostgreSQL",
     image: "/images/sapphire.png",
+    year: "2022",
   },
   {
     title: "Mpro",
     category: "Insurance Platform",
     tools: "React.js, Node.js, Microservices",
     image: "/images/Maxlife.png",
+    year: "2021",
   },
 ];
 
@@ -102,6 +147,7 @@ const Work = () => {
                     <div className="carousel-info">
                       <div className="carousel-number">
                         <h3>0{index + 1}</h3>
+                        <span className="carousel-year">{project.year}</span>
                       </div>
                       <div className="carousel-details">
                         <h4>{project.title}</h4>
@@ -112,6 +158,17 @@ const Work = () => {
                           <span className="tools-label">Tools & Features</span>
                           <p>{project.tools}</p>
                         </div>
+                        {project.link && (
+                          <a 
+                            href={project.link} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="project-link"
+                            data-cursor="disable"
+                          >
+                            View Project →
+                          </a>
+                        )}
                       </div>
                     </div>
                     <div className="carousel-image-wrapper">

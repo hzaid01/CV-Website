@@ -26,3 +26,13 @@ dist-ssr
 
 backup/
 .env
+
+# Large video files (already converted to frames)
+Intro.mp4
+Mobile_Intro.mp4
+
+# Original project images (already copied to public/images)
+Project 1.jpeg
+Project 2.jpeg
+Project 3.jpeg
+Project 4.jpeg
