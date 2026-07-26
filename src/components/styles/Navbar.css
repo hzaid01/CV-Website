@@ -109,11 +109,14 @@
   box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
 }
 
-/* Custom logo sizing */
+/* Wordmark logo (Hyper Oxide) */
 .nav-logo {
-  height: 60px; /* Bigger logo */
-  width: auto;
-  object-fit: contain;
+  display: inline-block;
+  font-family: "Hyper Oxide", sans-serif;
+  font-size: 30px;
+  line-height: 1;
+  letter-spacing: 1px;
+  color: #eae5ec;
   transition: transform 0.3s ease;
 }
 
@@ -122,7 +125,19 @@
 }
 
 .loading-logo {
-  height: 80px; /* Even bigger on loading screen */
-  width: auto;
-  object-fit: contain;
+  display: inline-block;
+  font-family: "Hyper Oxide", sans-serif;
+  font-size: 38px;
+  line-height: 1;
+  letter-spacing: 1px;
+  color: inherit;
+}
+
+@media only screen and (min-width: 1200px) {
+  .nav-logo {
+    font-size: 36px;
+  }
+  .loading-logo {
+    font-size: 46px;
+  }
 }

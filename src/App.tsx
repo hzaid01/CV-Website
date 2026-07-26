@@ -1,34 +1,21 @@
-import { lazy, Suspense, useState } from "react";
+import { lazy, Suspense } from "react";
 import "./App.css";
-import VideoIntro from "./components/VideoIntro";
 
 const CharacterModel = lazy(() => import("./components/Character"));
 const MainContainer = lazy(() => import("./components/MainContainer"));
 import { LoadingProvider } from "./context/LoadingProvider";
 
 const App = () => {
-  const [showIntro, setShowIntro] = useState(true);
-
-  const handleIntroComplete = () => {
-    setShowIntro(false);
-  };
-
   return (
-    <>
-      {showIntro ? (
-        <VideoIntro onComplete={handleIntroComplete} />
-      ) : (
-        <LoadingProvider>
+    <LoadingProvider>
+      <Suspense>
+        <MainContainer>
           <Suspense>
-            <MainContainer>
-              <Suspense>
-                <CharacterModel />
-              </Suspense>
-            </MainContainer>
+            <CharacterModel />
           </Suspense>
-        </LoadingProvider>
-      )}
-    </>
+        </MainContainer>
+      </Suspense>
+    </LoadingProvider>
   );
 };
 

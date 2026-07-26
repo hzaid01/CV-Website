@@ -2,8 +2,8 @@
   position: fixed;
   width: 100vw;
   height: var(--vh);
-  /* Solid light background color - lighter version of the main background */
-  background: #1a1f2e;
+  /* Solid beige gradient background */
+  background: linear-gradient(135deg, #f7f1e6 0%, #ece0cd 45%, #ddc9ab 100%);
   z-index: 999999999;
   display: flex;
   place-items: center;
