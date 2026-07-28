@@ -2,6 +2,7 @@ import { useState, useCallback } from "react";
 import "./styles/Work.css";
 import WorkImage from "./WorkImage";
 import { MdArrowBack, MdArrowForward } from "react-icons/md";
+import { assetUrl } from "../utils/assetUrl";
 
 interface Project {
   title: string;
@@ -17,7 +18,7 @@ const projects: Project[] = [
     title: "ValoraTrade",
     category: "Crypto Trading Signal Platform",
     tools: "FastAPI, XGBoost, React, Google Cloud Run",
-    image: "/images/project1.jpg",
+    image: assetUrl("images/project1.jpg"),
     link: "https://valoratrade.web.app",
     year: "2025",
   },
@@ -25,7 +26,7 @@ const projects: Project[] = [
     title: "JARVIS",
     category: "Cross-Platform AI Assistant",
     tools: "Electron, React, Ollama (Local LLM), Voice I/O",
-    image: "/images/project2.jpg",
+    image: assetUrl("images/project2.jpg"),
     link: "https://github.com/hzaid01/Jarvis",
     year: "2026",
   },
@@ -33,7 +34,7 @@ const projects: Project[] = [
     title: "UniConnect",
     category: "B2B LMS Platform",
     tools: "React, Firebase, WebRTC (Live Video Conferencing)",
-    image: "/images/project3.jpg",
+    image: assetUrl("images/project3.jpg"),
     year: "2026",
   },
 ];

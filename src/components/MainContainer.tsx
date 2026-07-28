@@ -24,6 +24,9 @@ const MainContainer = ({ children }: PropsWithChildren) => {
     };
     resizeHandler();
     window.addEventListener("resize", resizeHandler);
+
+    import("./utils/initialFX").then((module) => module.initialFX());
+
     return () => {
       window.removeEventListener("resize", resizeHandler);
     };
