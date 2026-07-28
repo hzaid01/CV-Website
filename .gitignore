@@ -1,5 +1,15 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build output
+dist/
+dist-ssr/
+build/
+
 # Logs
-logs
+logs/
 *.log
 npm-debug.log*
 yarn-debug.log*
@@ -7,32 +17,33 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
-
-# Editor directories and files
+# Editor
 .vscode/*
 !.vscode/extensions.json
-.idea
+.idea/
 .DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
-.npmrc
 
-backup/
+# OS
+Thumbs.db
+desktop.ini
+
+# Env
 .env
+.env.local
+.env.*.local
 
-# Large video files (already converted to frames)
-Intro.mp4
-Mobile_Intro.mp4
+# Misc
+*.local
+.eslintcache
+.cache/
+coverage/
 
-# Original project images (already copied to public/images)
-Project 1.jpeg
-Project 2.jpeg
-Project 3.jpeg
-Project 4.jpeg
+# Resume / personal
+Zaid_Sohail_Resume (1).docx
+read_resume.ps1
+node_modules

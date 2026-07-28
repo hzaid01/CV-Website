@@ -90,19 +90,19 @@ const WhatIDo = () => {
               <h3>FRONTEND</h3>
               <h4>Building Interactive UIs</h4>
               <p>
-                Crafting performant, responsive interfaces with modern frameworks.
-                From SPAs to micro-frontends, I deliver pixel-perfect experiences.
+                Crafting responsive interfaces and seamless user experiences
+                with modern web frameworks. From dashboards to AI-powered apps,
+                I focus on clean, functional design.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
-                <div className="what-tags">React.js</div>
-                <div className="what-tags">Angular</div>
-                <div className="what-tags">Next.js</div>
-                <div className="what-tags">TypeScript</div>
+                <div className="what-tags">React</div>
                 <div className="what-tags">JavaScript</div>
-                <div className="what-tags">Material UI</div>
+                <div className="what-tags">Electron</div>
                 <div className="what-tags">HTML5</div>
                 <div className="what-tags">CSS3</div>
+                <div className="what-tags">WebRTC</div>
+                <div className="what-tags">Firebase</div>
               </div>
               <div className="what-arrow"></div>
             </div>
@@ -126,22 +126,22 @@ const WhatIDo = () => {
             </div>
             <div className="what-corner"></div>
             <div className="what-content-in">
-              <h3>BACKEND</h3>
-              <h4>Scalable Server Architecture</h4>
+              <h3>BACKEND & ML</h3>
+              <h4>Scalable APIs & Machine Learning</h4>
               <p>
-                Designing robust APIs and microservices. From CMS platforms to
-                complex business logic, I build backends that scale.
+                Building robust backends with Python and FastAPI, training ML
+                models with XGBoost, and deploying everything to the cloud.
+                Backend is where I'm strongest.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
-                <div className="what-tags">Node.js</div>
-                <div className="what-tags">NestJS</div>
-                <div className="what-tags">Express.js</div>
-                <div className="what-tags">MongoDB</div>
-                <div className="what-tags">PostgreSQL</div>
-                <div className="what-tags">REST APIs</div>
-                <div className="what-tags">Microservices</div>
                 <div className="what-tags">Python</div>
+                <div className="what-tags">FastAPI</div>
+                <div className="what-tags">XGBoost</div>
+                <div className="what-tags">REST APIs</div>
+                <div className="what-tags">GCP</div>
+                <div className="what-tags">Pine Script</div>
+                <div className="what-tags">Git/GitHub</div>
               </div>
               <div className="what-arrow"></div>
             </div>

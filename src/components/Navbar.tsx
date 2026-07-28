@@ -1,27 +1,22 @@
 import { useEffect } from "react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import HoverLinks from "./HoverLinks";
-import { gsap } from "gsap";
-import { ScrollSmoother } from "gsap/ScrollSmoother";
+import Lenis from "lenis";
 import "./styles/Navbar.css";
 
-gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
-export let smoother: ScrollSmoother;
+export const lenis = new Lenis({
+  duration: 1.2,
+  smoothWheel: true,
+});
 
 const Navbar = () => {
   useEffect(() => {
-    smoother = ScrollSmoother.create({
-      wrapper: "#smooth-wrapper",
-      content: "#smooth-content",
-      smooth: 1.7,
-      speed: 1.7,
-      effects: true,
-      autoResize: true,
-      ignoreMobileResize: true,
-    });
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    const id = requestAnimationFrame(raf);
 
-    smoother.scrollTop(0);
-    smoother.paused(true);
+    lenis.stop();
 
     let links = document.querySelectorAll(".header ul a");
     links.forEach((elem) => {
@@ -31,22 +26,26 @@ const Navbar = () => {
           e.preventDefault();
           let elem = e.currentTarget as HTMLAnchorElement;
           let section = elem.getAttribute("data-href");
-          smoother.scrollTo(section, true, "top top");
+          if (section) {
+            lenis.scrollTo(section, { offset: 0 });
+          }
         }
       });
     });
-    window.addEventListener("resize", () => {
-      ScrollSmoother.refresh(true);
-    });
+
+    return () => {
+      cancelAnimationFrame(id);
+      lenis.destroy();
+    };
   }, []);
   return (
     <>
       <div className="header">
         <a href="/#" className="navbar-title" data-cursor="disable">
-          <span className="nav-logo">Ahmed</span>
+          <span className="nav-logo">Zaid</span>
         </a>
         <a
-          href="mailto:hassanahmed3286@gmail.com"
+          href="mailto:zaidsohail555@gmail.com"
           className="navbar-connect"
           data-cursor="disable"
           style={{ textDecoration: 'none' }}
