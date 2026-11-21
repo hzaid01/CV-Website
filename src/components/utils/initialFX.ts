@@ -2,12 +2,14 @@ import { SplitText } from "gsap/SplitText";
 import gsap from "gsap";
 import { lenis } from "../Navbar";
 
+gsap.registerPlugin(SplitText);
+
 export function initialFX() {
   document.body.style.overflowY = "auto";
   lenis.start();
   document.getElementsByTagName("main")[0].classList.add("main-active");
   gsap.to("body", {
-    backgroundColor: "#0a0e17",
+    backgroundColor: "#15171c",
     duration: 0.5,
     delay: 1,
   });

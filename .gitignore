@@ -47,3 +47,7 @@ coverage/
 Zaid_Sohail_Resume (1).docx
 read_resume.ps1
 node_modules
+
+# Astryx theme editor previews (generated)
+themes/*/*.html
+themes/*/*.png
