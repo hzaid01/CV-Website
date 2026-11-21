@@ -24,6 +24,7 @@ const Landing = () => {
             <br />
             <span>SOHAIL.</span>
           </h1>
+          <p className="hero-role-mobile">Full Stack · Backend & ML Engineer</p>
           <p className="hero-tagline">
             Backend & ML engineer who ships full products, from model to UI.
           </p>

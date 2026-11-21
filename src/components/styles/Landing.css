@@ -369,25 +369,37 @@ h2.landing-info-h2 {
   gap: 12px;
 }
 
+/* Shown only on small screens, in place of the rotating role text */
+.hero-role-mobile {
+  display: none;
+}
+
 @media screen and (max-width: 1024px) {
   .hero-photo {
-    height: 66vh;
+    height: 60vh;
     max-width: 100%;
   }
   .hero-word {
-    bottom: 36%;
+    bottom: 32%;
     font-size: 16.5vw;
   }
+  /* The rotating Developer/Engineer text overlaps the photo on phones */
   .landing-info {
-    top: calc(12% + 150px);
-    bottom: auto;
-    left: 0;
-    right: auto;
-    transform: none;
-  }
-  .hero-tagline,
-  .hero-actions {
     display: none;
+  }
+  .hero-role-mobile {
+    display: block;
+    margin: 12px 0 0;
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #a9c4ec;
+  }
+  .hero-tagline {
+    display: none;
+  }
+  .hero-actions {
+    margin-top: 18px;
   }
 }
 
