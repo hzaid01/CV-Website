@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import HoverLinks from "./HoverLinks";
 import Lenis from "lenis";
+import { Button } from "@astryxdesign/core/Button";
 import "./styles/Navbar.css";
 
 export const lenis = new Lenis({
@@ -44,14 +45,9 @@ const Navbar = () => {
         <a href="/#" className="navbar-title" data-cursor="disable">
           <span className="nav-logo">Zaid</span>
         </a>
-        <a
-          href="mailto:zaidsohail555@gmail.com"
-          className="navbar-connect"
-          data-cursor="disable"
-          style={{ textDecoration: 'none' }}
-        >
-          <button className="contact-btn">Contact Me</button>
-        </a>
+        <span className="navbar-connect" data-cursor="disable">
+          <Button label="Contact Me" variant="primary" size="sm" href="mailto:zaidsohail555@gmail.com" />
+        </span>
         <ul>
           <li>
             <a data-href="#about" href="#about">

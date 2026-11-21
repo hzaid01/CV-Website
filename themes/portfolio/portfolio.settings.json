@@ -1,0 +1,26 @@
+{
+  "name": "portfolio",
+  "like": "neutral",
+  "mode": "both",
+  "settings": [
+    {
+      "thing": "--color-background-body",
+      "value": "#15171c",
+      "source": "token",
+      "mode": "dark"
+    },
+    {
+      "thing": "--color-accent",
+      "value": "#a9c4ec",
+      "source": "token",
+      "mode": "dark"
+    },
+    {
+      "thing": "--color-on-accent",
+      "value": "#15171c",
+      "source": "token",
+      "mode": "dark"
+    }
+  ],
+  "lifted": []
+}

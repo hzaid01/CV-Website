@@ -1,55 +1,39 @@
-import { lazy, PropsWithChildren, Suspense, useEffect, useState } from "react";
-import About from "./About";
-import Career from "./Career";
-import Contact from "./Contact";
+import { useEffect } from "react";
+import BuildIntro from "./BuildIntro";
 import Cursor from "./Cursor";
 import Landing from "./Landing";
 import Navbar from "./Navbar";
 import SocialIcons from "./SocialIcons";
-import WhatIDo from "./WhatIDo";
-import Work from "./Work";
-import setSplitText from "./utils/splitText";
+import {
+  Craft,
+  Journey,
+  Results,
+  StackStrip,
+  Story,
+  Together,
+  Works,
+} from "./Sections";
 
-const TechStack = lazy(() => import("./TechStack"));
-
-const MainContainer = ({ children }: PropsWithChildren) => {
-  const [isDesktopView, setIsDesktopView] = useState<boolean>(
-    window.innerWidth > 1024
-  );
-
+const MainContainer = () => {
   useEffect(() => {
-    const resizeHandler = () => {
-      setSplitText();
-      setIsDesktopView(window.innerWidth > 1024);
-    };
-    resizeHandler();
-    window.addEventListener("resize", resizeHandler);
-
     import("./utils/initialFX").then((module) => module.initialFX());
-
-    return () => {
-      window.removeEventListener("resize", resizeHandler);
-    };
-  }, [isDesktopView]);
+  }, []);
 
   return (
     <div className="container-main">
+      <BuildIntro />
       <Cursor />
       <Navbar />
       <SocialIcons />
-      {isDesktopView && children}
       <div className="container-main">
-        <Landing>{!isDesktopView && children}</Landing>
-        <About />
-        <WhatIDo />
-        <Career />
-        <Work />
-        {isDesktopView && (
-          <Suspense fallback={<div>Loading....</div>}>
-            <TechStack />
-          </Suspense>
-        )}
-        <Contact />
+        <Landing />
+        <Works />
+        <StackStrip />
+        <Results />
+        <Story />
+        <Craft />
+        <Journey />
+        <Together />
       </div>
     </div>
   );
