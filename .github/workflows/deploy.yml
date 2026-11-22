@@ -49,7 +49,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      # While Pages "Source" is still "Deploy from a branch", GitHub also runs
+      # Safety net: if Pages "Source" is ever set back to "Deploy from a branch", GitHub also runs
       # its legacy "pages build and deployment" on every push, which publishes
       # the raw repo (index.html -> /src/main.tsx) and can finish after us.
       # Wait for it so this built deploy is always the last one to land.
