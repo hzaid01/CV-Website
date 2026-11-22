@@ -95,7 +95,7 @@ const BuildIntro = () => {
       el.removeEventListener("touchmove", block);
       window.removeEventListener("keydown", onKey);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+     
   }, [active]);
 
   const finish = () => {

@@ -1,32 +1,28 @@
 import { useEffect } from "react";
 import HoverLinks from "./HoverLinks";
-import Lenis from "lenis";
+import { lenis } from "./utils/lenis";
 import { Button } from "@astryxdesign/core/Button";
 import "./styles/Navbar.css";
 
-export const lenis = new Lenis({
-  duration: 1.2,
-  smoothWheel: true,
-});
-
 const Navbar = () => {
   useEffect(() => {
+    let id = 0;
     function raf(time: number) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      id = requestAnimationFrame(raf);
     }
-    const id = requestAnimationFrame(raf);
+    id = requestAnimationFrame(raf);
 
     lenis.stop();
 
-    let links = document.querySelectorAll(".header ul a");
+    const links = document.querySelectorAll(".header ul a");
     links.forEach((elem) => {
-      let element = elem as HTMLAnchorElement;
+      const element = elem as HTMLAnchorElement;
       element.addEventListener("click", (e) => {
         if (window.innerWidth > 1024) {
           e.preventDefault();
-          let elem = e.currentTarget as HTMLAnchorElement;
-          let section = elem.getAttribute("data-href");
+          const elem = e.currentTarget as HTMLAnchorElement;
+          const section = elem.getAttribute("data-href");
           if (section) {
             lenis.scrollTo(section, { offset: 0 });
           }
