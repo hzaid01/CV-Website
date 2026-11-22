@@ -51,3 +51,6 @@ node_modules
 # Astryx theme editor previews (generated)
 themes/*/*.html
 themes/*/*.png
+
+# TypeScript build cache
+*.tsbuildinfo
